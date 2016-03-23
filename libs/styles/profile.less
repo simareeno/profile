@@ -2,6 +2,7 @@
 
 .content {
 	margin: 60px auto 0;
+	position: relative;
 
 	&__h1 {
 		font-size: 38px;
@@ -9,6 +10,39 @@
 
 		&-icon {
 			width: 40px;
+		}
+	}
+
+	&--achievements, &--invite, &--quests {
+
+		.filter {
+			position: absolute;
+			right:0;
+
+			&:before {
+				top: 3px;
+			}
+		}
+	}
+
+	&--invite {
+
+		.tabs {
+			margin: 30px 0;
+		}
+	}
+
+	&--settings {
+
+		.tabs {
+			margin: 0 0 30px;
+		}
+	}
+
+	&--achievements {
+
+		.tabs {
+			margin: 0 0 60px;
 		}
 	}
 }
