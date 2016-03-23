@@ -1,0 +1,143 @@
+@import 'vars';
+
+.bar {
+	height: 35px;
+	background-color: #222;
+
+	.container {
+		display: flex;
+	}
+
+	a {
+		opacity: .7;
+		color: white;
+		transition: opacity .2s ease-in-out;
+
+		&:hover {
+			transition: opacity .0s ease-in-out;
+			opacity: 1;
+		}
+	}
+
+	&__item {
+		justify-content: space-between;
+		text-align: center;
+		font-size: 14px;
+		font-weight: bold;
+		position: relative;
+		line-height: 35px;
+		-webkit-user-select: none;
+
+		&:first-child {
+			text-align: left;
+		}
+
+		&:last-child {
+			text-align: right;
+		}
+	}
+
+	&__forgamer {
+
+		&-text {
+
+			&::before {
+				top: 14px;
+				left: -12px;
+				width: 8px;
+				height: 8px;
+				content: '';
+				display: inline-block;
+				position: absolute;
+				background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%228px%22%20height%3D%228px%22%20viewBox%3D%220%200%208%208%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M1%2C6%20L1%2C-5.68434189e-14%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M6%2C1%20L0%2C1%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M1%2C1%20L7%2C7%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A");
+			}
+		}
+	}
+
+	&__games {
+		flex-grow: 2;
+
+		&-list {
+
+		}
+
+		&-item {
+			display: inline-block;
+			position: relative;
+			left: 70px;
+
+			& + & {
+				margin-left: 30px;
+			}
+
+			&--forgame {
+
+				a::before {
+					top: 8px;
+					left: -20px;
+					width: 18px;
+					height: 18px;
+					content: '';
+					position: absolute;
+					background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAQAAAC1QeVaAAAAbElEQVR4AY3QsQ3DIBCF4TeGm9shwyQS8gCZj9oL3CZu3dH+kYJegRFRvtfxV5yMoNJoJIH6RN+DEyuOThcGu+OchrhxMqq8KTzZRGXlEI2V61dsIllJEby+O7BKfwnh7fNX/owFK3MM8n74D1sWMAaS+Sn3AAAAAElFTkSuQmCC") left center no-repeat;
+				}
+			}
+		}
+	}
+
+	&__personal {
+		display: flex;
+		position: relative;
+		right: -15px;
+
+		&-money {
+
+			.button {
+				margin: 7px 28px 10px;
+			}
+		}
+
+		&-item {
+			//
+			// & + & {
+			// 	margin-left: 30px;
+			// }
+		}
+
+		&-achievements {
+			width: 13px;
+			height: 19px;
+			fill: white;
+			padding-top: 6px;
+			margin-left: 15px;
+
+			svg {
+				width: 13px;
+				height: 19px;
+			}
+		}
+
+		&-user {
+			margin-left: 15px;
+
+			&-nick-ava {
+				display: flex;
+			}
+
+			&-avatar {
+				width: 28px;
+				height: 28px;
+				padding-top: 4px;
+
+				img {
+					width: inherit;
+					height: inherit;
+				}
+			}
+
+			&-nickname {
+				padding-left: 4px;
+			}
+		}
+	}
+}
