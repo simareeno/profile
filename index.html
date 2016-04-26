@@ -66,33 +66,83 @@
 		</div>
 	</div>
 
-	<div class="head">
+	<div class="head head--small">
 		<div class="container">
-			<div class="head__user">
-				<div class="head__user-avatar avatar"><img src="img/tears.jpg" alt=""></div>
-				<div class="head__user-nick-ava">
-					<div class="head__user-nickname nickname">JamataryAruchi</div>
-					<div class="head__user-status status">
-						<img class="head__user-status-icon" src="img/pb-icon.png" alt="">
-						<span  class="head__user-status-text">Point Blank</span>
-					</div>
-					<div class="head__user-button button button--white button--m">Редактировать</div>
-				</div>
-			</div>
 			<div class="head__menu">
 				<ul class="head__menu-list">
 					<li class="head__menu-item head__menu-item--active"><a href="index.html">Профиль</a></li>
 					<li class="head__menu-item"><a href="achievements.html">Достижения</a></li>
 					<li class="head__menu-item"><a href="quests.html">Задание дня</a></li>
-					<li class="head__menu-item"><a href="invite.html">Пригласи друга</a></li>
 					<li class="head__menu-item"><a href="settings.html">Настройки</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
+	<div class="screen">
+		<div class="container">
+			<div class="title">
+				<div class="title__content">JamataryAruchi</div>
+				<div class="status status--in-game">
+					<img class="status__icon" src="img/l2-icon.png" alt="">
+					<span class="status__state">был 20 дней назад</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="content content--main container">
-		<img src="img/pb-block.png" alt="">
+		<div class="content__left">
+			<div class="avatar"><img class="avatar__icon" src="img/tears.jpg" alt=""></div>
+			<div class="button button--white button--x">Редактировать</div>
+			<div class="additional">
+				<div class="additional__header">Социальные сети</div>
+				<div class="additional__content">
+					<div class="social">
+						<div class="social__icon social--vk"></div>
+						<div class="social__icon social--fb"></div>
+						<div class="social__icon social--ok"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content__center">
+			<img src="img/games.png" alt="">
+		</div>
+		<div class="content__right">
+			<h2>Друзья</h2>
+			<div class="friends">
+				<div class="friend">
+					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
+					<div class="friend__content">
+						<div class="friend__nickname nickname">Never Say No</div>
+						<div class="status status--in-game">
+							<img class="status__icon" src="img/l2-icon.png" alt="">
+							<span class="status__state">онлайн в Lineage 2</span>
+						</div>
+					</div>
+				</div>
+				<div class="friend">
+					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
+					<div class="friend__content">
+						<div class="friend__nickname nickname">electrOduck^_-</div>
+						<div class="status status--online">
+							<span class="status__state">онлайн</span>
+						</div>
+					</div>
+				</div>
+				<div class="friend">
+					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
+					<div class="friend__content">
+						<div class="friend__nickname nickname">SANKE</div>
+						<div class="status status--away">
+							<span class="status__state">был 20 дней назад</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="footer container">
@@ -101,6 +151,26 @@
 	</div>
 
 	<script src="scripts/script.js" charset="utf-8"></script>
+	<script>
+		$(document).ready( function() {
+			// var scroll, menuItem, menu;
+			//
+			// menuItem = $('.head__menu-item-profile a');
+			// menu = $('.head__menu');
+			//
+			// $(window).scroll(function (event) {
+			// 	scroll = $(window).scrollTop();
+			//
+			// 	if (scroll > 185) {
+			// 		menuItem.html('JamataryAruchi');
+			// 		// menu.addClass('head__menu--scroll');
+			// 	} else {
+			// 		menuItem.html('Профиль');
+			// 		// menu.removeClass('head__menu--scroll');
+			// 	}
+			// });
+		});
+	</script>
 
 </body>
 </html>

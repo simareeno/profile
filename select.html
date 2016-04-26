@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>controls</title>
+	<link rel="stylesheet" href="css/controls.css">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<script src="scripts/jquery.min.js" charset="utf-8"></script>
+	<script src="scripts/controls.js" charset="utf-8"></script>
+</head>
+<body>
+
+	<style>
+
+		* {
+			box-sizing: border-box;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		body {
+			background: black;
+			margin: 50px;
+		}
+
+		.select {
+			margin: 300px;
+		}
+
+	</style>
+
+	<div class="select select--black select--x">
+		<div class="select__input">
+			<div class="select__input-text">Point Blank</div>
+			<div class="select__input-arrows">
+				<div class="select__input-arrows-up">
+					<svg x="0px" y="0px" viewBox="0 0 6 5">
+						<path d="M0,0h6L3,5L0,0z"/>
+					</svg>
+				</div>
+				<div class="select__input-arrows-down">
+					<svg x="0px" y="0px" viewBox="0 0 6 5">
+						<path d="M0,0h6L3,5L0,0z"/>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div class="select__list">
+			<div class="select__list-item select__list-item-first">Aion</div>
+			<div class="select__list-item">Blade and Soul</div>
+			<div class="select__list-item">R2 Online</div>
+			<div class="select__list-item">RF Online</div>
+			<div class="select__list-item">Devil's Third Online</div>
+			<div class="select__list-item select__list-item--active">Point Blank</div>
+			<div class="select__list-item select__list-item-last">Dragensang Online</div>
+		</div>
+	</div>
+
+</body>
+</html>

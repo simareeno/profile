@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>controls</title>
+	<link rel="stylesheet" href="css/controls.css">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<script src="scripts/jquery.min.js" charset="utf-8"></script>
+	<script src="scripts/controls.js" charset="utf-8"></script>
+</head>
+<body>
+
+	<style>
+
+		* {
+			box-sizing: border-box;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		body {
+			background: black;
+			margin: 50px;
+		}
+
+		.tabs {
+			margin-top: 50px;
+		}
+
+	</style>
+
+	<div class="tabs tabs--black tabs--x">
+		<div class="tabs__item tabs__item--first tabs__item--active">Настройки входа</div>
+		<div class="tabs__item">Личные данные</div>
+		<div class="tabs__item">Безопасность</div>
+		<div class="tabs__item tabs__item--last">Уведомления</div>
+	</div>
+
+	<div class="tabs tabs--black tabs--x">
+		<div class="tabs__item tabs__item--first tabs__item--active">Привести друга</div>
+		<div class="tabs__item tabs__item--last">Вернуть друга</div>
+	</div>
+
+	<div class="tabs tabs--black tabs--m">
+		<div class="tabs__item tabs__item--first tabs__item--active">Привести друга</div>
+		<div class="tabs__item tabs__item--last">Вернуть друга</div>
+	</div>
+
+	<div class="tabs tabs--black tabs--s">
+		<div class="tabs__item tabs__item--first tabs__item--active">Настройки входа</div>
+		<div class="tabs__item tabs__item--last">Уведомления</div>
+	</div>
+
+</body>
+</html>
