@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Профиль</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" href="css/bar.css">
+	<link rel="stylesheet" href="css/head.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/rub.css">
+	<link rel="stylesheet" href="css/profile.css">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<script src="scripts/jquery.min.js" charset="utf-8"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+</head>
+<body class="black">
+
+	<div class="bar">
+		<div class="container">
+			<div class="bar__forgamer bar__item">
+				<a class="bar__forgamer-text" href="">Фогеймер про игры</a>
+			</div>
+			<div class="bar__games bar__item">
+				<ul class="bar__games-list">
+					<li class="bar__games-item bar__games-item--forgame"><a>Фогейм</a></li>
+					<li class="bar__games-item"><a>MMO игры</a></li>
+					<li class="bar__games-item"><a>Хиты в Steam и Uplay</a></li>
+					<li class="bar__games-item"><a>Мобильные</a></li>
+				</ul>
+			</div>
+			<div class="bar__personal bar__item">
+				<div class="bar__personal-money bar__personal-item money dropdown">
+					<div class="bar__personal-money-title dropdown__top-part">
+						<span>100500 </span>
+						<span class="rouble">руб.</span>
+						<i class="dropdown__arrow dropdown__arrow--idiot"></i>
+					</div>
+					<ul class="dropdown__list">
+						<li class="dropdown__list-item">
+							<div class="button button--m">Пополнить счет</div>
+						</li>
+						<li class="dropdown__list-item"><a>Подарочные коды</a></li>
+						<li class="dropdown__list-item"><a>Кредит</a></li>
+					</ul>
+				</div>
+				<div class="bar__personal-achievements bar__personal-item">
+					<a><i ><svg ><rect height="6" width="9" y="1" x="2" data-reactid=".0.2.1.0.1.0.4.0.$0.0.0.0.0"></rect><path d="m6.5,7.5l3,9l-8,-6l10,0l-8,6l3,-9"></path></svg></i></a>
+				</div>
+				<div class="bar__personal-user bar__personal-item dropdown">
+					<div class="bar__personal-user-nick-ava dropdown__top-part">
+						<span class="bar__personal-user-avatar avatar"><img src="img/tears.jpg" alt=""></span>
+						<span class="bar__personal-user-nickname nickname">JamataryAruchi</span>
+						<i class="dropdown__arrow"></i>
+					</div>
+					<ul class="dropdown__list">
+						<li class="dropdown__list-item dropdown__list-item--hl"><a href="index.html">Профиль</a></li>
+						<li class="dropdown__list-item"><a href="achievements.html">Достижения</a></li>
+						<li class="dropdown__list-item"><a href="quests.html">Задание дня</a></li>
+						<li class="dropdown__list-item"><a href="settings.html">События</a></li>
+						<li class="dropdown__list-item"><a href="settings.html">Настройки</a></li>
+						<li class="dropdown__list-item dropdown__list-item--divide-top"><a>Выйти</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="head head--small">
+		<div class="container">
+			<div class="head__menu">
+				<ul class="head__menu-list">
+					<li class="head__menu-item head__menu-item--active"><a href="index.html">Профиль</a></li>
+					<li class="head__menu-item"><a href="achievements.html">Достижения</a></li>
+					<li class="head__menu-item"><a href="quests.html">Задание дня</a></li>
+					<li class="head__menu-item"><a href="settings.html">Настройки</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="screen">
+		<div class="container">
+			<div class="title">
+				<div class="title__content">
+					<span class="editable-nickname">
+							<span class="editable-nickname__change" id="input1">Рандомный ник</span>
+							<span class="editable-nickname__absolute">
+								<span class="editable-nickname__icon editable-nickname__icon--edit editable-nickname__icon--first-time"></span>
+								<span class="editable-nickname__save editable-nickname__save--yeap">Сохранить</span>
+								<span class="editable-nickname__message editable-nickname__message--yeap">
+									<svg x="0px" y="0px" viewBox="0 0 14 14">
+										<path d="M7.4,10.3l-0.8,0.9l-0.8-1L2.5,6.5l1.1-2.1l3.2,3.2l5-5.7C10.5,0.7,8.8,0,7,0C3.1,0,0,3.1,0,7c0,3.9,3.1,7,7,7c3.9,0,7-3.1,7-7c0-1.4-0.4-2.7-1.1-3.8L7.4,10.3z"></path>
+									</svg>
+									Ник изменен</span>
+								<span class="editable-nickname__tip tip tip--active tip--bounce-left">Измени на свой ник</span>
+							</span>
+					</span>
+
+				</div>
+				<div class="title-menu status status--online">
+					<!-- <img class="status__icon" src="img/l2-icon.png" alt=""> -->
+					<span class="status__state">онлайн на сайте</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content content--main container">
+		<div class="content__left">
+			<div class="user__avatar">
+				<div class="user__avatar-tip tip">Смени аватарку</div>
+				<div class="user__avatar-pic">
+					<div class="user__avatar-change avatar">
+						<img class="avatar__icon" src="img/userpic.png" alt="">
+						<div class="user__avatar-change-desc">Сменить</div>
+					</div>
+					<img class="user__avatar-image user__avatar-image--vk user__avatar-image--hide" src="img/avatar111.jpeg" alt="">
+					<img class="user__avatar-image user__avatar-image--fb user__avatar-image--hide" src="img/avatar222.jpg" alt="">
+				</div>
+				<div class="user__avatar-dropdown user__avatar-dropdown--hide">
+					<span class="user__avatar-dropdown-arrow"></span>
+	        <span class="user__avatar-dropdown-close"></span>
+	        <span class="user__avatar-dropdown-settings"></span>
+					<ul>
+						<li class="user__avatar-dropdown--active user__avatar-dropdown--standart user-avatar-dropdown-item">
+	            <span class="user__avatar-dropdown-avatar"><img src="img/4game-avatar.png" alt=""></span>
+	            <span class="user__avatar-dropdown-desc">Стандартный</span>
+	          </li>
+						<li class="user-avatar-dropdown-item user__avatar-dropdown--vk">
+	            <span class="user__avatar-dropdown-avatar"><img src="img/avatar111.jpeg" alt=""></span>
+	            <span class="user__avatar-dropdown-desc">Из Вконтакте</span>
+	          </li>
+						<li class="user-avatar-dropdown-item user__avatar-dropdown--fb">
+	            <span class="user__avatar-dropdown-avatar"><img src="img/avatar222.jpg" alt=""></span>
+	            <span class="user__avatar-dropdown-desc">Из Фейсбука</span>
+	          </li>
+					</ul>
+				</div>
+			</div>
+
+
+			<!-- <div class="avatar"><img class="avatar__icon" src="img/tears.jpg" alt=""></div> -->
+			<!-- <div class="button button--white button--x">Редактировать</div> -->
+			<!-- <div class="additional">
+				<div class="additional__header">Социальные сети</div>
+				<div class="additional__content">
+					<div class="social">
+						<div class="social__icon social--vk"></div>
+						<div class="social__icon social--fb"></div>
+						<div class="social__icon social--ok"></div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		<div class="content__center">
+			<img src="img/games.png" alt="">
+		</div>
+		<div class="content__right">
+			<h2>Друзья</h2>
+			<div class="friends">
+				<div class="friend">
+					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
+					<div class="friend__content">
+						<div class="friend__nickname nickname">Never Say No</div>
+						<div class="status status--in-game">
+							<img class="status__icon" src="img/l2-icon.png" alt="">
+							<span class="status__state">онлайн в Lineage 2</span>
+						</div>
+					</div>
+				</div>
+				<div class="friend">
+					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
+					<div class="friend__content">
+						<div class="friend__nickname nickname">electrOduck^_-</div>
+						<div class="status status--online">
+							<span class="status__state">онлайн</span>
+						</div>
+					</div>
+				</div>
+				<div class="friend">
+					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
+					<div class="friend__content">
+						<div class="friend__nickname nickname">SANKE</div>
+						<div class="status status--away">
+							<span class="status__state">был 20 дней назад</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="footer container">
+		<div class="footer__support footer__item"><a>Служба поддержки</a></div>
+		<div class="footer__lang footer__item"><a>Россия и СНГ: Русский</a></div>
+	</div>
+
+	<script src="scripts/script.js" charset="utf-8"></script>
+	<script>
+
+		$(document).ready( function() {
+
+			jQuery.fn.selectText = function(){
+			   var doc = document;
+			   var element = this[0];
+			   if (doc.body.createTextRange) {
+			       var range = document.body.createTextRange();
+			       range.moveToElementText(element);
+			       range.select();
+			   } else if (window.getSelection) {
+			       var selection = window.getSelection();
+			       var range = document.createRange();
+			       range.selectNodeContents(element);
+			       selection.removeAllRanges();
+			       selection.addRange(range);
+			   }
+			};
+
+			function applyNickname() {
+				document.getSelection().removeAllRanges();
+				$('#input1').attr('contenteditable', false);
+				$('.editable-nickname__change').removeClass('editable-nickname__change--editable');
+				$('.editable-nickname__message').addClass('editable-nickname__message--active');
+				$('.editable-nickname__icon').removeClass('editable-nickname__icon--close');
+				$('.editable-nickname__icon').addClass('editable-nickname__icon--edit');
+				$('.editable-nickname__save').removeClass('editable-nickname__save--active');
+				setTimeout( "$('.editable-nickname__message').removeClass('editable-nickname__message--active');", 3000);
+			}
+
+			document.getElementById('input1').addEventListener('keypress', function(e) {
+			    if (e.code === 'Enter')  {
+						applyNickname();
+						 e.preventDefault();
+					}
+			});
+
+			$('.editable-nickname__save').click(function () {
+				applyNickname()
+			});
+
+			$('.editable-nickname__icon').click(function () {
+				if ($('.editable-nickname__icon').hasClass('editable-nickname__icon--edit')) {
+					$('#input1').attr('contenteditable', true);
+					$('#input1').selectText();
+					$('.editable-nickname__save').addClass('editable-nickname__save--active');
+					$('.editable-nickname__change').addClass('editable-nickname__change--editable');
+					$('.editable-nickname__tip').removeClass('tip--active');
+					$('.editable-nickname__icon').removeClass('editable-nickname__icon--first-time');
+					$('.editable-nickname__icon').removeClass('editable-nickname__icon--edit');
+					$('.editable-nickname__icon').addClass('editable-nickname__icon--close');
+				} else if ($('.editable-nickname__icon').hasClass('editable-nickname__icon--close')) {
+					$('#input1').attr('contenteditable', false);
+					document.getSelection().removeAllRanges();
+					$('.editable-nickname__save').removeClass('editable-nickname__save--active');
+					$('.editable-nickname__change').removeClass('editable-nickname__change--editable');
+					$('.editable-nickname__save').removeClass('editable-nickname__save--active');
+					$('.editable-nickname__icon').removeClass('editable-nickname__icon--close');
+					$('.editable-nickname__icon').addClass('editable-nickname__icon--edit');
+				}
+			})
+
+
+
+
+
+
+			$('.user__avatar-pic, .user__avatar-tip').on('click', function (event) {
+				$('.user__avatar-dropdown').toggleClass('user__avatar-dropdown--hide');
+				event.stopPropagation();
+			})
+
+			$('.user__avatar-dropdown--standart').on('click', function (event) {
+				changeAvatar($('.user__avatar-dropdown--standart'));
+	      hideTip();
+			})
+
+		    $('.user__avatar-dropdown--vk').on('click', function (event) {
+					changeAvatar($('.user__avatar-dropdown--vk'));
+		      hideTip();
+				})
+
+		    $('.user__avatar-dropdown--fb').on('click', function (event) {
+						changeAvatar($('.user__avatar-dropdown--fb'));
+		        hideTip();
+				})
+
+		    function changeAvatar(activeClass) {
+		      $('.user-avatar-dropdown-item').removeClass('user__avatar-dropdown--active')
+		      activeClass.addClass('user__avatar-dropdown--active');
+		    }
+
+		    function hideTip() {
+		      event.stopPropagation();
+		        if ($('.user__avatar-dropdown--standart').hasClass('user__avatar-dropdown--active')) {
+		          $('.user__avatar-image').addClass('user__avatar-image--hide')
+		          $('.user__avatar-tip').removeClass('tip--hide');
+		          console.log('hidetip');
+		        } else if ($('.user__avatar-dropdown--vk').hasClass('user__avatar-dropdown--active')) {
+		          $('.user__avatar-image').addClass('user__avatar-image--hide')
+		          $('.user__avatar-image--vk').removeClass('user__avatar-image--hide')
+		          $('.user__avatar-tip').addClass('tip--hide')
+		        } else {
+		          $('.user__avatar-image').addClass('user__avatar-image--hide')
+		          $('.user__avatar-image--fb').removeClass('user__avatar-image--hide')
+		          $('.user__avatar-tip').addClass('tip--hide')
+		        }
+		    }
+
+		    $(document).on('click', function(e) {
+		      event.stopPropagation();
+			      $('.user__avatar-dropdown').addClass('user__avatar-dropdown--hide');
+				});
+
+		    $('.user__avatar-dropdown-close').on('click', function(e) {
+		      event.stopPropagation();
+		        $('.user__avatar-dropdown').addClass('user__avatar-dropdown--hide');
+		    });
+		});
+	</script>
+
+</body>
+</html>
+
+!

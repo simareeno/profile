@@ -110,6 +110,10 @@
 	&--bounce-left {
 		animation: bounce-left 3000ms linear infinite both;
 	}
+
+	&--bounce-bottom {
+		animation: bounce-bottom 3000ms linear infinite both;
+	}
 }
 
 .user {
@@ -459,6 +463,10 @@ justify-content: space-between;
 	}
 }
 
+.editable-nickname__icon:hover {
+	transition: opacity .2s ease-in-out!important;
+}
+
 .editable-nickname {
 	position: relative;
 
@@ -477,20 +485,26 @@ justify-content: space-between;
 		font-size: 40px;
 		background: transparent;
 		border: 0;
-		box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, .0);
+		box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, .0);
 		color: white;
 		-moz-appearance: textfield;
 		-webkit-appearance: textfield;
 		outline: 0;
 		transition: box-shadow .2s ease-in-out;
 		min-width: 20px;
+		border-radius: 5px;
+		padding: 5px 15px;
 
 		&--editable {
-			box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, .2);
+			box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, .2);
+
+			&:hover {
+				box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, .5);
+			}
 		}
 
 		&:focus {
-			box-shadow: 0px 2px 0px 0px rgba(255, 190, 4, 1);
+			// box-shadow: 0px 0px 0px 2px rgba(255, 190, 4, 1);
 		}
 
 		&::selection {
@@ -502,7 +516,7 @@ justify-content: space-between;
 
 	&__icon {
 		cursor: pointer;
-		transition: opacity .2s ease-in-out!important;
+		transition: opacity .2s ease-in-out;
 		width: 17px;
 		height: 18px;
 		display: inline-block;
@@ -510,6 +524,7 @@ justify-content: space-between;
 		background-repeat: no-repeat;
 		-webkit-user-select: none;
 		padding-right: 30px;
+		z-index: 2;
 
 		&--first-time {
 			opacity: .5;
@@ -532,7 +547,7 @@ justify-content: space-between;
 
 	&__tip {
 		top: -4px;
-		left: 60px;
+		left: 45px;
 
 		&:before {
 			content: '';
@@ -615,6 +630,31 @@ justify-content: space-between;
 	}
 }
 
+.title {
+    padding: 72px 100px;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.screen .container {
+    position: relative;
+    text-align: center;
+}
+
+.content {
+    margin: 0px auto 0;
+    position: relative;
+}
+
+.bar__personal-user-nickname {
+    padding-left: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+	white-space: nowrap;
+}
+
 
 
 @keyframes bounce-left {
@@ -636,4 +676,17 @@ justify-content: space-between;
   56.46% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 19.97, 0, 0, 1); }
   81.48% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 20.001, 0, 0, 1); }
   100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 20, 0, 0, 1); }
+}
+
+@keyframes bounce-bottom {
+  0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, NaN, NaN, NaN, NaN); }
+  3.2% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 5.304, 0, 1); }
+  6.41% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 6.607, 0, 1); }
+  12.71% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 4.25, 0, 1); }
+  18.92% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.381, 0, 1); }
+  25.23% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.026, 0, 1); }
+  31.43% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.314, 0, 1); }
+  56.46% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.015, 0, 1); }
+  81.48% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.001, 0, 1); }
+  100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
