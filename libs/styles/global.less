@@ -52,6 +52,7 @@ a {
 .title {
 	padding: 72px 0 28px;
 	text-align: center;
+	display: inline-flex;
 
 	&__content {
 		font-size: 48px;
@@ -86,6 +87,7 @@ a {
 			position: relative;
 			top: 5px;
 			right: 2px;
+			margin: 0 5px;
 		}
 	}
 }
@@ -326,6 +328,7 @@ a {
 
 	.container {
 		position: relative;
+		text-align: center;
 	}
 }
 
@@ -357,6 +360,11 @@ a {
 		outline: 0;
 		color: transparent;
 		transition: border .2s ease-in-out;
+		border-radius: 5px;
+
+		option {
+			color: black;
+		}
 
 		&:hover {
 			border: 2px solid rgba(255, 255, 255, .5);
@@ -409,6 +417,94 @@ a {
 
 		& + & {
 			margin-left: 32px;
+		}
+	}
+}
+
+.select-wrapper {
+	position: relative;
+	top: 20px;
+	margin-left: 10px;
+}
+
+.game-select {
+	position: relative;
+	z-index: 50;
+
+	&__button {
+		border: 2px solid rgba(255,255,255, .2);
+		border-radius: 5px;
+		width: 24px;
+		height: 24px;
+		position: relative;
+		top: 20px;
+		left: 10px;
+		cursor: pointer;
+		transition: border .2s ease-in-out;
+
+		&:hover {
+			border: 2px solid rgba(255,255,255, .5);
+
+			i {
+				opacity: 1;
+			}
+		}
+
+		.dropdown__arrow {
+			top:12px;
+			margin-left: 0px;
+			opacity: .5;
+			transition: opacity .2s ease-in-out;
+		}
+	}
+
+	&__list {
+		position: absolute;
+		top: 70px;
+		width: 190px;
+		text-align: left;
+		background-color: white;
+		padding: 5px 0;
+		border-radius: 5px;
+		left: -140px;
+		transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+		opacity: 0;
+		transform: translate(0, -10px);
+
+		.user__avatar-dropdown-arrow {
+			left: 166px;
+		}
+
+		&--active {
+			opacity: 1;
+			transform: translate(0,0);
+		}
+	}
+
+	&__option {
+		padding: 5px 10px 9px 35px;
+		color: black;
+		font-weight: bold;
+		font-size: 16px;
+		-webkit-user-select: none;
+		cursor: pointer;
+		position: relative;
+
+		&:hover {
+			background-color: @yellow4game;
+		}
+
+		&--active {
+
+			&:before {
+				background-image: url(../img/check.png);
+				width:14px;
+				height: 13px;
+				content: '';
+				position: absolute;
+				left: 10px;
+				top: 10px;
+			}
 		}
 	}
 }
