@@ -91,8 +91,16 @@
 		</div>
 	</div>
 
-	<div class="content content--achievements container">
+	<div class="content achievements content--achievements container">
 		<img src="img/ach-page.png" alt="">
+		<div class="achievements__game achievements__game--pb">
+			<div class="achievements__header"><img src="img/pb-head.png" alt=""><i class="achievements__arrow dropdown__arrow"></i></div>
+			<div class="achievements__list"><img src="img/pb-ach.png" alt=""></div>
+		</div>
+		<div class="achievements__game achievements__game--aion">
+			<div class="achievements__header"><img src="img/aion-head.png" alt=""><i class="achievements__arrow dropdown__arrow"></i></div>
+			<div class="achievements__list"><img src="img/aion-ach.png" alt=""></div>
+		</div>
 	</div>
 
 	<div class="footer container">
@@ -101,6 +109,18 @@
 	</div>
 
 	<script src="scripts/script.js" charset="utf-8"></script>
+
+	<script>
+		$('.achievements__game--pb .achievements__header').click(function () {
+			$('.achievements__game--pb .achievements__list').toggleClass('achievements__list--active');
+			$('.achievements__game--pb .achievements__header').toggleClass('achievements__header--active');
+		})
+
+		$('.achievements__game--aion .achievements__header').click(function () {
+			$('.achievements__game--aion .achievements__list').toggleClass('achievements__list--active');
+			$('.achievements__game--aion .achievements__header').toggleClass('achievements__header--active');
+		})
+	</script>
 
 </body>
 </html>

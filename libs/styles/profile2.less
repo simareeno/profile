@@ -307,7 +307,7 @@
 	  top: 210px;
 	left: -0px;
       transform: translate(0,15px);
-      padding: 35px 25px 20px 25px;
+      padding: 20px 15px 15px;
 
 	  ul {
 		  display: flex;
@@ -429,7 +429,7 @@ justify-content: space-between;
       &--hide {
         opacity:0;
         transform: translate(0,0px);
-        z-index:0;
+        z-index: -1;
       }
 
       ul {
@@ -566,44 +566,28 @@ justify-content: space-between;
 	}
 
 	&__save {
-		text-transform: uppercase;
-		letter-spacing: 1.5px;
-		font-size: 14px;
-		font-weight: bold;
-		-webkit-user-select: none;
-		cursor: pointer;
 		opacity: 0;
 		width:0;
-		padding:0;
+		margin:0;
+		padding: 0;
 		transition: opacity .2s ease-in-out, color .2s ease-in-out;
 
 		&--active {
 			width: initial;
-			padding-right: 20px;
+			margin-right: 20px;
 			opacity: 1;
-			color: rgba(255, 255, 255, .5);
-
-			&:hover {
-				color: rgba(255, 255, 255, 1);
-			}
-		}
-
-		&--yeap {
-			color: @yellow4game;
-
-			&:hover {
-				color: @yellow4game;
-			}
+			padding: 0 15px;
 		}
 	}
 
-	&__message {
+	&__tooltip {
 		font-size: 16px;
 		font-weight: bold;
 		transition: opacity 1s ease-in-out;
 		opacity: 0;
-		width: 0;
 		-webkit-user-select: none;
+		z-index: -1;
+		position: absolute;
 
 		svg {
 			width: 14px;
@@ -614,18 +598,18 @@ justify-content: space-between;
 			top: 2px;
 		}
 
-		&--yeap {
+		&--success {
 			color: @green;
-			    width: initial;
+			width: initial;
 		}
 
-		&--nope {
+		&--error {
 			color: @red;
 		}
 
 		&--active {
+			z-index: 1;
 			opacity: 1;
-			width: initial;
 		}
 	}
 }
@@ -653,6 +637,67 @@ justify-content: space-between;
     text-overflow: ellipsis;
     max-width: 150px;
 	white-space: nowrap;
+}
+
+.additional {
+	margin-top: 30px;
+
+	&__header {
+		font-size: 12px;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		opacity: .5;
+		font-weight: bold;
+	}
+
+	&__content {
+		margin-top: 10px;
+	}
+}
+
+.social {
+	display: flex;
+	align-items: center;
+
+	&__icon {
+		fill: white;
+		height: 20px;
+		display: flex;
+		padding: 0 10px;
+		cursor: pointer;
+		align-items: center;
+		opacity: .75;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&--vk {
+
+			padding-left:0;
+
+			svg {
+				width: 18px;
+				height: 10px;
+			}
+		}
+
+		&--fb {
+
+			svg {
+				width: 9px;
+				height: 16px;
+			}
+		}
+
+		&--ok {
+
+			svg {
+				width: 10px;
+				height: 17px;
+			}
+		}
+	}
 }
 
 

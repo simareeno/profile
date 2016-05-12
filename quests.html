@@ -81,34 +81,19 @@
 	<div class="screen">
 		<div class="container">
 			<div class="title">
-				<div class="title__content">Задание дня в <a class="title__game-icon"><img src="img/pb-icon.png" alt="">Point Blank</a></div>
-				<div class="game-filter__dropdown">
-					<div class="select-wrapper">
-						<select class="game-filter__select">
-							<option selected value="Point Blank">Point Blank</option>
-							<option value="Aion">Aion</option>
-							<option value="Lineage 2">Lineage 2</option>
-						</select>
+				<div class="title__content">Задание дня в <a class="title__game-icon"><img src="img/pb-icon.png" alt=""><span class="title__game-name">Point Blank</span></a></div>
+				<div class="game-select">
+					<div class="game-select__button">
 						<i class="dropdown__arrow"></i>
+					</div>
+					<div class="game-select__list">
+						<span class="user__avatar-dropdown-arrow"></span>
+						<div class="game-select__option game-select__option--pb game-select__option--active">Point Blank</div>
+						<div class="game-select__option game-select__option--l2">Lineage 2</div>
+						<div class="game-select__option game-select__option--dto">Devil's Third Online</div>
 					</div>
 				</div>
 			</div>
-			<!-- <div class="title-menu">
-				<div class="title-menu__item game-filter">
-					<a><img class="game-filter__icon" src="img/pb-icon.png" alt=""> <span class="game-filter__text">Point Blank</span></a>
-					<div class="game-filter__dropdown">
-						<div class="select-wrapper">
-							<select class="game-filter__select">
-								<option selected value="Point Blank">Point Blank</option>
-								<option value="Aion">Aion</option>
-								<option value="Lineage 2">Lineage 2</option>
-							</select>
-							<i class="dropdown__arrow"></i>
-						</div>
-					</div>
-				</div>
-			</div> -->
-
 		</div>
 	</div>
 
@@ -122,6 +107,29 @@
 	</div>
 
 	<script src="scripts/script.js" charset="utf-8"></script>
+
+	<script>
+		$('.game-select__button').click(function () {
+			$('.game-select__list').toggleClass('game-select__list--active');
+		})
+
+		$('.game-select__option').click(function () {
+			$('.game-select__option').removeClass('game-select__option--active');
+			$(this).addClass('game-select__option--active');
+			$('.game-select__list').toggleClass('game-select__list--active');
+
+			if ($(this).hasClass('game-select__option--pb')) {
+				$('.title__game-name').text('Point Blank');
+				$('.title__game-icon img').attr('src', 'img/pb-icon.png');
+			} else if ($(this).hasClass('game-select__option--l2')) {
+				$('.title__game-name').text('Lineage 2');
+				$('.title__game-icon img').attr('src', 'img/l2-icon.png');
+			} else if ($(this).hasClass('game-select__option--dto')) {
+				$('.title__game-name').text("Devil's Third Online");
+				$('.title__game-icon img').attr('src', 'img/dto-icon.png');
+			}
+		})
+	</script>
 
 </body>
 </html>
