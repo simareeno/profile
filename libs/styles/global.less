@@ -469,16 +469,32 @@ a {
 		margin-bottom: 40px;
 		cursor: pointer;
 		opacity: .5;
-		transition: opaicty 2s ease-in-out;
+		transition: opacity .2s ease-in-out;
+		display: flex;
+
+		&-arrow-span {
+			transform: rotate(0deg);
+			transition: transform .2s ease-in-out;
+		}
+
+		span {
+			margin-left: 15px;
+		}
+
+		img, span {
+			display: inline-flex;
+			align-items: center;
+		}
 
 		&:hover {
 			opacity: .75;
+			transition: opacity .05s ease-in-out;
 		}
 
 		&--active {
 			opacity: 1!important;
 
-			.dropdown__arrow {
+			.achievements__header-arrow-span {
 				transform: rotate(180deg);
 			}
 		}
@@ -493,7 +509,7 @@ a {
 	}
 
 	&__arrow {
+		margin-left:0;
 		top: -1px;
-		margin-left: 16px;
 	}
 }

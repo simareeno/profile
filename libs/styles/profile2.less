@@ -5,7 +5,7 @@
 	position: relative;
 
 	&__left, &__right {
-		width: 200px;
+		width: 220px;
 	}
 
 	&__right {
@@ -90,29 +90,47 @@
 .tip {
 	font-size: 18px;
 	line-height: 25px;
-	color: @yellow4game;
+	color: black;
 	font-weight: bold;
-	background: #181818;
-	box-shadow: 0 0 0 2px rgba(255, 255, 255, .15);
-	padding: 5px 15px;
-	border-radius: 7px;
+	background: @yellow4game;
+	// box-shadow: 0 0 0 2px rgba(255, 255, 255, .15);
+	padding: 30px;
+	border-radius: 100%;
 	position: absolute;
+	text-align: center;
 	user-select: none;
 	cursor: pointer;
 	opacity: 0;
 	z-index: -1;
+	transform: scale3d(0.1,0.2,1);
+	transition: transform .0s ease-in-out, opacity .0s ease-in-out;
+
+	&__arrow {
+		position: absolute;
+		fill: @yellow4game;
+		width: 57px;
+		height: 48px;
+		z-index: 0;
+	}
+
+	&__text {
+		position: relative;
+		z-index: 50;
+	}
 
 	&--active {
 		opacity: 1;
 		z-index: 1;
+		transform: scale3d(1,1,1);
+		transition: transform .4s ease-in-out, opacity .4s ease-in-out;
 	}
 
 	&--bounce-left {
-		animation: bounce-left 3000ms linear infinite both;
+		// animation: bounce-left 3000ms linear infinite both;
 	}
 
 	&--bounce-bottom {
-		animation: bounce-bottom 3000ms linear infinite both;
+		// animation: bounce-bottom 3000ms linear infinite both;
 	}
 }
 
@@ -201,8 +219,8 @@
   }
 
   &__avatar {
-    width:200px;
-    height:200px;
+    width:220px;
+    height:220px;
     border-radius: 7px;
     background-color: #fc0;
     background-image: url(../img/4game-logo.png);
@@ -212,28 +230,35 @@
     position: relative;
 
     &-tip {
-		left: 20px;
-		top: -60px;
+		left: -40px;
+	    top: -125px;
+	    right: -50px;
 
-      &:before {
-		  content: '';
-	      border-top: 0;
-	      left: 88px;
-	      position: absolute;
-	      margin-left: -16px;
-	      width: 10px;
-	      top: 30px;
-	      height: 10px;
-	      background: #181818;
-	      border-bottom: 2px solid rgba(255,255,255,.15);
-	      border-right: 2px solid rgba(255,255,255,.15);
-	      transform: rotate(45deg);
-      }
+		.tip__arrow {
+			top: 51px;
+			transform: rotate(209deg);
+			left: 76px;
+		}
+
+    //   &:before {
+	// 	  content: '';
+	//       border-top: 0;
+	//       left: 178px;
+	//       position: absolute;
+	//       margin-left: -16px;
+	//       width: 10px;
+	//       top: 30px;
+	//       height: 10px;
+	//       background: @yellow4game;
+	//     //   border-bottom: 2px solid rgba(255,255,255,.15);
+	//     //   border-right: 2px solid rgba(255,255,255,.15);
+	//       transform: rotate(45deg);
+    //   }
     }
 
     &-image {
       position: absolute;
-		width: 200px;
+		width: 220px;
       top: 0;
       left: 0;
       opacity: 1;
@@ -547,22 +572,28 @@ justify-content: space-between;
 
 	&__tip {
 		top: -4px;
-		left: 45px;
+		left: 60px;
 
-		&:before {
-			content: '';
-		    border-top: 0;
-		    left: 0px;
-		    position: absolute;
-		    margin-left: -7px;
-		    width: 10px;
-		    top: 12px;
-		    height: 10px;
-		    background: #181818;
-		    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-		    border-right: 2px solid rgba(255, 255, 255, 0.15);
-		    transform: rotate(135deg);
-        }
+
+		.tip__arrow {
+			top: 0;
+			left: 0;
+		}
+
+		// &:before {
+		// 	content: '';
+		//     border-top: 0;
+		//     left: 0px;
+		//     position: absolute;
+		//     margin-left: -5px;
+		//     width: 10px;
+		//     top: 12px;
+		//     height: 10px;
+		//     background: @yellow4game;
+		//     // border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+		//     // border-right: 2px solid rgba(255, 255, 255, 0.15);
+		//     transform: rotate(135deg);
+        // }
 	}
 
 	&__save {
@@ -675,7 +706,6 @@ justify-content: space-between;
 }
 
 .additional {
-	margin-top: 30px;
 
 	&__header {
 		font-size: 12px;
@@ -731,6 +761,35 @@ justify-content: space-between;
 				width: 10px;
 				height: 17px;
 			}
+		}
+	}
+}
+
+.block {
+
+	&--pure {
+		background: rgba(255, 255, 255, .075);
+		border-radius: 7px;
+		padding: 15px 20px;
+	}
+
+	& + & {
+		margin-top: 20px;
+	}
+}
+
+.url {
+
+
+	&__tip {
+		top: -137px;
+
+		.tip__arrow {
+			transform: rotate(143deg) scaleX(-1);
+			filter: FlipH;
+			-webkit-filter: flipH;
+			bottom: -9px;
+			right: 39px;
 		}
 	}
 }

@@ -89,7 +89,13 @@
 							<span class="editable-nickname__absolute">
 								<span class="editable-nickname__save editable-nickname__save--yeap button button--m button--yellow">Сохранить</span>
 								<span class="editable-nickname__icon editable-nickname__icon--edit editable-nickname__icon--first-time"></span>
-								<span class="editable-nickname__tip tip tip--active tip--bounce-left">Измени на свой ник</span>
+								<span class="editable-nickname__tip tip tip--bounce-left">
+									<span class="tip__text">Не твой ник? Поменяй</span>
+									<span class="tip__arrow"><svg x="0px" y="0px" viewBox="0 0 57.5 48.4">
+										<path d="M32.9,48.4c0,0,1.5-9.4-5.3-22.4C19.5,10.3,7.7,9.6,1.8,8.8c-2.6-0.4-2-1.9-0.4-2.9C20.1-7.3,57.5,5.9,57.5,5.9l0,0
+											L32.9,48.4z"/>
+									</svg></span>
+								</span>
 							</span>
 					</span>
 					<span class="editable-nickname__tooltip">
@@ -113,9 +119,15 @@
 
 	<div class="content content--main container">
 		<div class="content__left">
-			<div class="user__avatar">
-				<div class="user__avatar-tip tip">Смени аватарку</div>
-				<div class="user__avatar-pic">
+			<div class="user__avatar block">
+				<div class="user__avatar-tip tip">
+					<span class="tip__text">Отлично, сменишь юзерпик?</span>
+					<span class="tip__arrow"><svg x="0px" y="0px" viewBox="0 0 57.5 48.4">
+						<path d="M32.9,48.4c0,0,1.5-9.4-5.3-22.4C19.5,10.3,7.7,9.6,1.8,8.8c-2.6-0.4-2-1.9-0.4-2.9C20.1-7.3,57.5,5.9,57.5,5.9l0,0
+							L32.9,48.4z"/>
+					</svg></span>
+				</div>
+				<div class="user__avatar-pic ">
 					<div class="user__avatar-change avatar">
 						<img class="avatar__icon" src="img/userpic.png" alt="">
 						<div class="user__avatar-change-desc">Сменить</div>
@@ -142,8 +154,7 @@
 				</div>
 			</div>
 
-			<!-- <div class="button button--white button--x">Редактировать</div> -->
-			<div class="additional">
+			<div class="additional block block--pure">
 				<div class="additional__header">В соцсетях</div>
 				<div class="additional__actions">
 					<div class="additional__actions-single additional__actions-single--settings"></div>
@@ -202,14 +213,30 @@
 					</div>
 				</div>
 			</div>
-			<div class="additional">
+
+			<!-- <div class="button button--white button--x">Редактировать</div> -->
+
+
+		</div>
+		<div class="content__center">
+			<img src="img/games.png" alt="">
+		</div>
+		<div class="content__right">
+			<div class="additional block block--pure url">
+				<div class="url__tip tip">
+					<span class="tip__text">Покажи свой профиль друзьям</span>
+					<span class="tip__arrow"><svg x="0px" y="0px" viewBox="0 0 57.5 48.4">
+						<path d="M32.9,48.4c0,0,1.5-9.4-5.3-22.4C19.5,10.3,7.7,9.6,1.8,8.8c-2.6-0.4-2-1.9-0.4-2.9C20.1-7.3,57.5,5.9,57.5,5.9l0,0
+							L32.9,48.4z"/>
+					</svg></span>
+				</div>
 				<div class="additional__header">Адрес в Фогейме</div>
 				<div class="additional__actions">
 					<div class="additional__actions-single additional__actions-single--share"></div>
 					<div class="additional__actions-single additional__actions-single--settings"></div>
 				</div>
 				<div class="additional__content">
-					<div class="additional__content__link">4game.com/simareeno</div>
+					<div class="additional__content__link">4game.com/9620205723</div>
 					<!-- <div class="additional__content__link-share">
 						<div class="social">
 							<div class="social__icon social__icon--vk">
@@ -265,12 +292,8 @@
 					</div> -->
 				</div>
 			</div>
-		</div>
-		<div class="content__center">
-			<img src="img/games.png" alt="">
-		</div>
-		<div class="content__right">
-			<h2>Друзья</h2>
+
+			<!-- <h2>Друзья</h2>
 			<div class="friends">
 				<div class="friend">
 					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
@@ -300,7 +323,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 	</div>
@@ -371,6 +394,14 @@
 				$(".user__avatar-tip").addClass('tip--active tip--bounce-bottom');
 			}
 
+			function startUrlTip() {
+				$('.url__tip').addClass('tip--active');
+			}
+
+			function hideUrlTip() {
+				$('.url__tip').removeClass('tip--active');
+			}
+
 			function applyPosition(w) {
 				w = Math.round(w) / 2;
 				$('.editable-nickname__absolute').css('transform',"translateX(" + w + "px)");
@@ -416,6 +447,8 @@
 						 e.preventDefault();
 				}
 			});
+
+			$(".editable-nickname__tip").addClass('tip--active')
 
 			$('.editable-nickname__save').click(function () {
 				applyNickname();
@@ -496,12 +529,14 @@
 		          $('.user__avatar-image--fb').removeClass('user__avatar-image--hide')
 				  $(".bar__personal-user-avatar img").attr("src","img/avatar222.jpg");
 		        }
-				hideAvatarEdit()
+				startUrlTip();
+				hideAvatarEdit();
 		    }
 
 		    $(document).on('click', function(e) {
 				event.stopPropagation();
 				hideAvatarEdit();
+				hideUrlTip();
 				// cancelNickname();
 			});
 
