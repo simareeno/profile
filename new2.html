@@ -15,7 +15,7 @@
 	<script src="scripts/jquery.min.js" charset="utf-8"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 </head>
-<body class="black">
+<body class="black" id="body">
 
 	<div class="bar">
 		<div class="container">
@@ -86,17 +86,21 @@
 				<div class="title__content">
 					<span class="editable-nickname">
 							<span class="editable-nickname__change" id="input1">Грозный енот</span>
-							<span class="editable-nickname__tooltip">
-								<svg x="0px" y="0px" viewBox="0 0 14 14">
-									<path d="M7.4,10.3l-0.8,0.9l-0.8-1L2.5,6.5l1.1-2.1l3.2,3.2l5-5.7C10.5,0.7,8.8,0,7,0C3.1,0,0,3.1,0,7c0,3.9,3.1,7,7,7c3.9,0,7-3.1,7-7c0-1.4-0.4-2.7-1.1-3.8L7.4,10.3z"></path>
-								</svg>
-								Ник изменен
-							</span>
 							<span class="editable-nickname__absolute">
 								<span class="editable-nickname__save editable-nickname__save--yeap button button--m button--yellow">Сохранить</span>
 								<span class="editable-nickname__icon editable-nickname__icon--edit editable-nickname__icon--first-time"></span>
 								<span class="editable-nickname__tip tip tip--active tip--bounce-left">Измени на свой ник</span>
 							</span>
+					</span>
+					<span class="editable-nickname__tooltip">
+						<span class="user__avatar-dropdown-arrow"></span>
+						<svg class="editable-nickname__success" x="0px" y="0px" viewBox="0 0 14 14">
+							<path d="M7.4,10.3l-0.8,0.9l-0.8-1L2.5,6.5l1.1-2.1l3.2,3.2l5-5.7C10.5,0.7,8.8,0,7,0C3.1,0,0,3.1,0,7c0,3.9,3.1,7,7,7c3.9,0,7-3.1,7-7c0-1.4-0.4-2.7-1.1-3.8L7.4,10.3z"></path>
+						</svg>
+						<svg class="editable-nickname__error" x="0px" y="0px" viewBox="0 0 14 14">
+							<path d="M7.4,10.3l-0.8,0.9l-0.8-1L2.5,6.5l1.1-2.1l3.2,3.2l5-5.7C10.5,0.7,8.8,0,7,0C3.1,0,0,3.1,0,7c0,3.9,3.1,7,7,7c3.9,0,7-3.1,7-7c0-1.4-0.4-2.7-1.1-3.8L7.4,10.3z"></path>
+						</svg>
+						<span class="editable-nickname__tooltip-text">Ник изменен</span>
 					</span>
 				</div>
 				<div class="title-menu status status--online">
@@ -141,6 +145,9 @@
 			<!-- <div class="button button--white button--x">Редактировать</div> -->
 			<div class="additional">
 				<div class="additional__header">В соцсетях</div>
+				<div class="additional__actions">
+					<div class="additional__actions-single additional__actions-single--settings"></div>
+				</div>
 				<div class="additional__content">
 					<div class="social">
 						<div class="social__icon social__icon--vk">
@@ -197,6 +204,10 @@
 			</div>
 			<div class="additional">
 				<div class="additional__header">Адрес в Фогейме</div>
+				<div class="additional__actions">
+					<div class="additional__actions-single additional__actions-single--share"></div>
+					<div class="additional__actions-single additional__actions-single--settings"></div>
+				</div>
 				<div class="additional__content">
 					<div class="additional__content__link">4game.com/simareeno</div>
 					<!-- <div class="additional__content__link-share">
@@ -304,7 +315,7 @@
 
 		$(document).ready( function() {
 
-			var inputLength, initialNickname, nicknameEdited, avatarChanged;
+			var inputLength, initialNickname, nicknameCurrent, avatarChanged, nicknameLength;
 
 			initialNickname = $('#input1').text();
 
@@ -330,18 +341,25 @@
 			};
 
 			function applyNickname() {
+				nicknameCurrent = $('#input1').text();
+				nicknameLength = nicknameCurrent.length;
+				if (nicknameLength < 3) {
+					$('.editable-nickname__tooltip').addClass('editable-nickname__tooltip--active editable-nickname__tooltip--error');
+					$('.editable-nickname__tooltip-text').text('Слишком короткий ник');
+					// setTimeout( "$('.editable-nickname__tooltip').removeClass('editable-nickname__tooltip--active editable-nickname__tooltip--error');", 3000);
+					return false;
+				} else if (nicknameCurrent === initialNickname) {
+				} else {
+					$('.editable-nickname__tooltip').addClass('editable-nickname__tooltip--active editable-nickname__tooltip--success');
+					$('.editable-nickname__tooltip-text').text('Ник изменен');
+					setTimeout( "$('.editable-nickname__tooltip').removeClass('editable-nickname__tooltip--active editable-nickname__tooltip--success');", 1500);
+				}
 				document.getSelection().removeAllRanges();
 				$('#input1').attr('contenteditable', false);
 				$('.editable-nickname__change').removeClass('editable-nickname__change--editable');
-				$('#input1').length();
-				if ($('#input1').length() > 2) {
-					console.log('sss');
-				}
-				$('.editable-nickname__tooltip').addClass('editable-nickname__tooltip--active');
 				$('.editable-nickname__icon').removeClass('editable-nickname__icon--close');
 				$('.editable-nickname__icon').addClass('editable-nickname__icon--edit');
 				$('.editable-nickname__save').removeClass('editable-nickname__save--active');
-				setTimeout( "$('.editable-nickname__message').removeClass('editable-nickname__message--active');", 3000);
 				initialNickname = $('#input1').text();
 				$('.bar__personal-user-nickname').text(initialNickname);
 				if (!avatarChanged) {
@@ -380,17 +398,27 @@
 				$('.editable-nickname__icon').addClass('editable-nickname__icon--close');
 			}
 
+			function closeTooltip() {
+				$('.editable-nickname__tooltip').removeClass('editable-nickname__tooltip--active editable-nickname__tooltip--success editable-nickname__tooltip--error');
+			}
+
+			document.getElementById('body').addEventListener('keypress', function(e) {
+				if (e.code !== 'Enter')  {
+					closeTooltip();
+				}
+			});
+
 			document.getElementById('input1').addEventListener('keypress', function(e) {
 				inputLength = $('#input1').outerWidth();
 				applyPosition(inputLength);
 			    if (e.code === 'Enter')  {
 						applyNickname();
 						 e.preventDefault();
-					}
+				}
 			});
 
 			$('.editable-nickname__save').click(function () {
-				applyNickname()
+				applyNickname();
 			});
 
 			$('.editable-nickname__icon').click(function () {
@@ -399,6 +427,7 @@
 					startEdit();
 				} else if ($('.editable-nickname__icon').hasClass('editable-nickname__icon--close')) {
 					cancelNickname();
+					closeTooltip();
 				}
 			})
 
@@ -408,6 +437,11 @@
 
 			$('.title__content').click(function () {
 				event.stopPropagation();
+			})
+
+
+			$('.additional__content__link').click(function () {
+				$(this).selectText();
 			})
 
 
@@ -480,5 +514,3 @@
 
 </body>
 </html>
-
-!
