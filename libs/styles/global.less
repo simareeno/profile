@@ -5,12 +5,24 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-body {
+html {
+	// background-color: #1C1C1F;
 	background-color: #151517;
+}
+
+body {
 	color: white;
 	font-family: PT Sans, Arial, sans-serif;
 	margin: 0;
 	line-height: 1.4;
+
+	&.body {
+
+		&--profile {
+			// background-color: #151517;
+			// background: radial-gradient(ellipse at center,  rgba(49,72,137,.3) 30%,rgba(49,72,137,0) 100%);
+		}
+	}
 
 	// &.black {
 	// 	background-color: #232427;
@@ -74,9 +86,10 @@ a {
 		right: -8px;
 
 		img {
-			width: 40px;
+			width: 50px;
+			border-radius: 100%!important;
 			position: relative;
-			top: -5px;
+			top: -1px;
 		}
 	}
 
@@ -126,6 +139,7 @@ a {
 
 	img {
 		border-radius: 5px;
+		-webkit-user-select: none;
 	}
 }
 
@@ -511,5 +525,52 @@ a {
 	&__arrow {
 		margin-left:0;
 		top: -1px;
+	}
+}
+
+.dropdown-list {
+	position: absolute;
+	z-index: 10;
+	opacity: 0;
+	transform: translate(0, 10px);
+	transition: opacity .2s ease-in-out, transform .2s ease-in-out, left .2s .2s ease-in-out;
+	left: -9999px;
+	background-color: white;
+	border-radius: 5px;
+	color: black;
+	top: 30px;
+	padding: 5px 0;
+
+	&__option {
+		padding: 5px 10px 9px;
+		color: black;
+		font-weight: bold;
+		font-size: 14px;
+		-webkit-user-select: none;
+		cursor: pointer;
+		position: relative;
+
+		&:hover {
+			background-color: @yellow4game;
+		}
+	}
+
+	&-arrow {
+		top: -8px;
+		border-top: 0;
+		border-bottom: 8px solid #fff;
+		left: 46px;
+		position: absolute;
+		margin-left: -16px;
+		border-right: 8px solid transparent;
+		border-left: 8px solid transparent;
+		border-bottom-color: #fff;
+	}
+
+	&--active {
+		left: -30px;
+		opacity: 1;
+		transform: translate(0, 0px);
+		transition: opacity .2s ease-in-out, transform .2s ease-in-out;
 	}
 }

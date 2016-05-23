@@ -423,6 +423,74 @@
 		box-shadow: 0 3px 6px #ccc inset;
 		background-image: -webkit-linear-gradient(#fff, #fff);
 	}
+
+	.button__label {
+		opacity: .75;
+	}
+}
+
+.button--icon-vk {
+
+	.button__label {
+
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 18px;
+			height: 10px;
+			margin-right: 5px;
+			opacity: .3;
+		}
+	}
+
+	&.button--yellow {
+
+		.button__label {
+
+			&:before {
+				background-image: url(../img/vk.png);
+			}
+		}
+	}
+
+	&.button--white {
+
+		.button__label {
+
+			&:before {
+				background-image: url(../img/vk-black.png);
+			}
+		}
+	}
+
+	&:hover {
+		background: linear-gradient(top,#71b9e4 0,#52a0ce 50%,#499aca 93%);
+		background: -webkit-linear-gradient(top,#71b9e4 0,#52a0ce 50%,#499aca 93%);
+
+		.button__label {
+			color: white;
+			opacity: 1;
+
+			&:before {
+				background-image: url(../img/vk.png);
+				// opacity: .5;
+			}
+		}
+	}
+
+	&:active {
+		box-shadow: none;
+		background-image: -webkit-linear-gradient(top,#2a648c 22%,#1d7bb7 100%);
+
+		.button__label {
+			opacity: .5;
+		}
+	}
+}
+
+.button--full-width {
+	width: 100%;
+	text-align: center;
 }
 
 .button--x {
