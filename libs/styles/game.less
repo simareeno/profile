@@ -15,9 +15,27 @@
 
 		&:hover {
 
-			.actions {
+			.main__header-actions {
 				opacity: 1;
 			}
+		}
+	}
+
+	&__widget {
+		background: black;
+		box-shadow: 0 0 0 1px rgba(255,255,255,.05);
+		margin-top: 20px;
+		padding: 30px;
+		border-radius: 7px;
+
+		&-title {
+			font-size: 22px;
+			font-weight: bold;
+		}
+
+		&-content {
+			margin-top: 30px;
+			text-align: center;
 		}
 	}
 
@@ -58,6 +76,7 @@
 
 		&-actions {
 			display: inline-block;
+			margin-left: 10px;
 		}
 
 		&-icon {
@@ -73,21 +92,21 @@
 			top: -7px;
 			cursor: pointer;
 
-			&:hover & {
-
-				&-game {
-					color: @red;
-					transition: color .05s ease-in-out;
-				}
-			}
 
 			&-game {
 				font-size: 28px;
 				color: @linkColor;
-				transition: color .05s ease-in-out;
+
 
 				&-label {
+					color: @linkColor;
+					transition: color .05s ease-in-out;
+					transition: color .05s ease-in-out;
 					display: inline-block;
+
+					&:hover {
+						color: @red;
+					}
 				}
 			}
 
@@ -233,11 +252,38 @@
 		z-index: 1;
 
 		&-list {
+			overflow-y: scroll;
+			height: 350px;
+			padding-right: 15px;
+			position: relative;
+			padding-left: 2px;
+
+			&::-webkit-scrollbar {
+				height: 10px;
+				width: 10px;
+				background: rgba(0, 0, 0, .5);
+				border-radius: 10px;
+				margin-left: 10px;
+				transform: translate(10px,0);
+			}
+				&::-webkit-scrollbar-thumb {
+				background: rgba(255, 255, 255, .2);
+				transition: background .2s ease-in-out;
+				border-radius: 10px;
+				transform: translate(10px,0);
+
+				&:hover {
+					background: rgba(255, 255, 255, .3);
+					transition: background .2s ease-in-out;
+				}
+			}
+				&::-webkit-scrollbar-corner {
+				background: #000;
+			}
 		}
 
 		&-title {
 			.upper12;
-			opacity: .5;
 		}
 
 		.character:first-child {
@@ -266,6 +312,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
 
 		&-text {
 			font-weight: bold;
@@ -298,13 +345,26 @@
 	flex-wrap: wrap;
 	width: 100%;
 	padding: 20px 0 20px;
+	position: relative;
 
 	&:last-child {
 		padding-bottom: 0;
 	}
 
 	& + & {
-		border-top: 2px solid rgba(255,255,255,.1);
+
+		&:before {
+			position: absolute;
+			top: 0;
+			content: '';
+			width: 100%;
+			height: 2px;
+			background: -moz-linear-gradient(left,  rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+			background: -webkit-linear-gradient(left,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+			background: linear-gradient(to right,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#00ffffff',GradientType=1 );
+
+		}
 	}
 
 	&__header {
@@ -316,11 +376,21 @@
 		cursor: pointer;
 	}
 
+	&__actions {
+		margin-left: 5px;
+		flex-grow: 1;
+		text-align: right;
+	}
+
 	&:hover & {
 
 		&__header {
 			opacity: .75;
 			transition: opacity .05s ease-in-out;
+		}
+
+		&__actions {
+			opacity: 1;
 		}
 	}
 
@@ -345,8 +415,7 @@
 		font-weight: bold;
 		font-size: 18px;
 		padding: 8px 0;
-		flex-grow: 1;
-		padding: 0 0 0 20px;
+		padding: 0 20px;
 	}
 
 	&__lvl {
