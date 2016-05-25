@@ -10,6 +10,10 @@
 .game {
 	width: 620px;
 
+	& + & {
+		margin-top: 60px;
+	}
+
 	&__main {
 		box-shadow: 0 0 0 1px rgba(255,255,255,.05);
 
@@ -77,6 +81,8 @@
 		&-actions {
 			display: inline-block;
 			margin-left: 10px;
+			position: relative;
+			top:5px;
 		}
 
 		&-icon {
@@ -252,11 +258,15 @@
 		z-index: 1;
 
 		&-list {
-			overflow-y: scroll;
-			height: 350px;
-			padding-right: 15px;
 			position: relative;
-			padding-left: 2px;
+
+			&--overflow {
+				overflow-x: hidden;
+				overflow-y: scroll;
+				padding-right: 15px;
+				padding-left: 2px;
+				height: 365px;
+			}
 
 			&::-webkit-scrollbar {
 				height: 10px;
@@ -339,6 +349,14 @@
 	}
 }
 
+.stats {
+	opacity: 1;
+}
+
+.stats, .character__name, .character__class, .character__lvl {
+	transition: opacity .2s ease-in-out;
+}
+
 
 .character {
 	display: flex;
@@ -346,6 +364,18 @@
 	width: 100%;
 	padding: 20px 0 20px;
 	position: relative;
+
+	&.visibility-trigger--hovered {
+
+		transition: opacity .2s .2s ease-in-out;
+
+
+		.stats, .character__name, .character__class, .character__lvl {
+			opacity: .2;
+			// visibility: hidden;
+			// display: none;
+		}
+	}
 
 	&:last-child {
 		padding-bottom: 0;

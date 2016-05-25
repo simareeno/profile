@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="css/game.css">
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 	<script src="scripts/jquery.min.js" charset="utf-8"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
 </head>
 <body class="black body body--profile" id="body">
 
@@ -173,9 +173,7 @@
 						<div class="actions__single-tip small-tip">изменить в&nbsp;настройках</div>
 					</div>
 					<div class="actions__single actions__single--visibility">
-						<div class="actions__single-icon">
-							<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
-						</div>
+						<svg class="actions__single-icon eye"></svg>
 						<div class="actions__single-tip small-tip">скрыть от&nbsp;всех</div>
 					</div>
 				</div>
@@ -295,7 +293,7 @@
 							<span class="main__about-item-title-text">персонажей</span>
 						</div>
 						<div class="main__characters-list">
-							<div class="character character--active">
+							<div class="character character--active visibility-trigger">
 								<div class="character__header">
 									<div class="character__lvl">85</div>
 									<div class="character__name">Tokimonsta</div>
@@ -320,32 +318,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="character">
-								<div class="character__header">
-									<div class="character__lvl">32</div>
-									<div class="character__name">Vedas</div>
-									<span class="character__class">Мудрец Евы</span>
-									<div class="character__actions actions">
-										<div class="actions__single actions__single--visibility">
-											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
-											</div>
-											<div class="actions__single-tip small-tip">скрыть от всех</div>
-										</div>
-									</div>
-								</div>
-								<div class="character__stats stats">
-									<div class="stats__block stats__block--half stats__block--height-1">
-										<div class="stats__block-text">Gran Kain</div>
-										<div class="stats__block-title">сервер</div>
-									</div>
-									<div class="stats__block stats__block--half stats__block--height-1">
-										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
-										<div class="stats__block-title">клан</div>
-									</div>
-								</div>
-							</div>
-							<div class="character">
+							<div class="character visibility-trigger">
 								<div class="character__header">
 									<div class="character__lvl">15</div>
 									<div class="character__name">Elia</div>
@@ -370,57 +343,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="character">
-								<div class="character__header">
-									<div class="character__lvl">5</div>
-									<div class="character__name">S4dboy</div>
-									<span class="character__class">Верховный Шаман</span>
-									<div class="character__actions actions">
-										<div class="actions__single actions__single--visibility">
-											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
-											</div>
-											<div class="actions__single-tip small-tip">скрыть от всех</div>
-										</div>
-									</div>
-								</div>
-								<div class="character__stats stats">
-									<div class="stats__block stats__block--half stats__block--height-1">
-										<div class="stats__block-text">Gran Kain</div>
-										<div class="stats__block-title">сервер</div>
-									</div>
-									<div class="stats__block stats__block--half stats__block--height-1">
-										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
-										<div class="stats__block-title">клан</div>
-									</div>
-								</div>
-							</div>
-							<div class="character">
-								<div class="character__header">
-									<div class="character__lvl">5</div>
-									<div class="character__name">S4dboy</div>
-									<span class="character__class">Верховный Шаман</span>
-									<div class="character__actions actions">
-										<div class="actions__single actions__single--visibility">
-											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
-											</div>
-											<div class="actions__single-tip small-tip">скрыть от всех</div>
-										</div>
-									</div>
-								</div>
-								<div class="character__stats stats">
-									<div class="stats__block stats__block--half stats__block--height-1">
-										<div class="stats__block-text">Gran Kain</div>
-										<div class="stats__block-title">сервер</div>
-									</div>
-									<div class="stats__block stats__block--half stats__block--height-1">
-										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
-										<div class="stats__block-title">клан</div>
-									</div>
-								</div>
-							</div>
-							<div class="character">
+							<div class="character visibility-trigger">
 								<div class="character__header">
 									<div class="character__lvl">5</div>
 									<div class="character__name">S4dboy</div>
@@ -458,6 +381,272 @@
 
 				<div class="game__invite game__widget">
 					<div class="game__widget-title"><a>Пригласи друга</a> и оба получите награды</div>
+				</div>
+
+			</div>
+
+			<div class="game block game--l2 visibility-trigger">
+
+				<div class="game__main main">
+
+					<div class="main__header">
+						<div class="main__header-icon">
+							<img src="img/l2-icon.png" alt="" />
+						</div>
+						<div class="main__header-title">
+							<div class="main__header-title-game">
+								<div class="main__header-title-game-label">Lineage 2</div>
+								<div class="main__header-actions actions">
+									<div class="actions__single actions__single--visibility">
+										<div class="actions__single-icon">
+											<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"></path></svg>
+										</div>
+										<div class="actions__single-tip small-tip">скрыть от всех</div>
+									</div>
+								</div>
+							</div>
+							<div class="main__header-title-sub main__header-title-sub--offline">был 5 часов назад</div>
+						</div>
+					</div>
+
+					<div class="main__about">
+						<div class="main__about-item main__about-item--time">
+							<div class="main__about-item-icon">
+								<svg viewBox="0 0 18 18"><path d="M9,0a9,9,0,1,0,9,9A9,9,0,0,0,9,0Zm3.69,12.72a1,1,0,0,1-1.41,0L8.38,9.79A1,1,0,0,1,8,9L8,3.06a1,1,0,0,1,2,0l0,5.49,2.73,2.76A1,1,0,0,1,12.69,12.72Z"/></svg>
+							</div>
+							<div class="main__about-item-title">
+								<span class="main__about-item-title-bignumber">205</span>
+								<span class="main__about-item-title-text">часов в игре</span>
+							</div>
+						</div>
+						<div class="main__about-item main__about-item--achievements">
+							<div class="main__about-item-icon">
+								<svg viewBox="0 0 14.98 21"><path d="M15,11.67H9.22L7.85,7h3.67a1.16,1.16,0,0,0,1.15-1.17V1.17A1.16,1.16,0,0,0,11.52,0H3.46A1.16,1.16,0,0,0,2.31,1.17V5.83A1.16,1.16,0,0,0,3.46,7H7.27l-1.5,4.67H0l4.42,4L2.75,20.87l4.67-3.06L12,21l-1.52-5.3Z"/></svg>
+							</div>
+							<div class="main__about-item-title">
+								<span class="main__about-item-title-bignumber main__about-item-title-bignumber--unlocked">5</span>
+								<span class="main__about-item-title-out-of"> <span class="main__about-item-title-from">из</span> 20</span>
+								<span class="main__about-item-title-text">достижений</span>
+							</div>
+						</div>
+						<div class="main__about-item  main__about-item--premium">
+							<div class="main__about-item-icon">
+								<svg viewBox="0 0 20 16"><path d="M4,5A2,2,0,1,0,2,7,2,2,0,0,0,4,5Zm6-1A2,2,0,1,0,8,2,2,2,0,0,0,10,4Zm8-1a2,2,0,1,0,2,2A2,2,0,0,0,18,3Zm-5,7L10,5,7,10H7L5,8H3s1,8,3,8h8c2,0,3-8,3-8H15Z"/></svg>
+							</div>
+							<div class="main__about-item-title">
+								<span class="main__about-item-title-text">премиум аккаунт</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="main__characters">
+						<div class="main__characters-title">
+							<span class="main__about-item-title-bignumber">8</span>
+							<span class="main__about-item-title-text">персонажей</span>
+						</div>
+						<div class="main__characters-list main__characters-list--overflow">
+							<div class="character character--active visibility-trigger">
+								<div class="character__header">
+									<div class="character__lvl">85</div>
+									<div class="character__name">Tokimonsta</div>
+									<span class="character__class">Охотник за сокровищами</span>
+									<div class="character__actions actions">
+										<div class="actions__single actions__single--visibility">
+											<div class="actions__single-icon">
+												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
+											</div>
+											<div class="actions__single-tip small-tip">скрыть от всех</div>
+										</div>
+									</div>
+								</div>
+								<div class="character__stats stats">
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text">Gran Kain</div>
+										<div class="stats__block-title">сервер</div>
+									</div>
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
+										<div class="stats__block-title">клан</div>
+									</div>
+								</div>
+							</div>
+							<div class="character visibility-trigger">
+								<div class="character__header">
+									<div class="character__lvl">15</div>
+									<div class="character__name">Elia</div>
+									<span class="character__class">Властитель огня</span>
+									<div class="character__actions actions">
+										<div class="actions__single actions__single--visibility">
+											<div class="actions__single-icon">
+												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
+											</div>
+											<div class="actions__single-tip small-tip">скрыть от всех</div>
+										</div>
+									</div>
+								</div>
+								<div class="character__stats stats">
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text">Gran Kain</div>
+										<div class="stats__block-title">сервер</div>
+									</div>
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
+										<div class="stats__block-title">клан</div>
+									</div>
+								</div>
+							</div>
+							<div class="character visibility-trigger">
+								<div class="character__header">
+									<div class="character__lvl">5</div>
+									<div class="character__name">S4dboy</div>
+									<span class="character__class">Верховный Шаман</span>
+									<div class="character__actions actions">
+										<div class="actions__single actions__single--visibility">
+											<div class="actions__single-icon">
+												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
+											</div>
+											<div class="actions__single-tip small-tip">скрыть от всех</div>
+										</div>
+									</div>
+								</div>
+								<div class="character__stats stats">
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text">Gran Kain</div>
+										<div class="stats__block-title">сервер</div>
+									</div>
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
+										<div class="stats__block-title">клан</div>
+									</div>
+								</div>
+							</div>
+							<div class="character visibility-trigger">
+								<div class="character__header">
+									<div class="character__lvl">5</div>
+									<div class="character__name">S4dboy</div>
+									<span class="character__class">Верховный Шаман</span>
+									<div class="character__actions actions">
+										<div class="actions__single actions__single--visibility">
+											<div class="actions__single-icon">
+												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
+											</div>
+											<div class="actions__single-tip small-tip">скрыть от всех</div>
+										</div>
+									</div>
+								</div>
+								<div class="character__stats stats">
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text">Gran Kain</div>
+										<div class="stats__block-title">сервер</div>
+									</div>
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
+										<div class="stats__block-title">клан</div>
+									</div>
+								</div>
+							</div>
+							<div class="character visibility-trigger">
+								<div class="character__header">
+									<div class="character__lvl">5</div>
+									<div class="character__name">S4dboy</div>
+									<span class="character__class">Верховный Шаман</span>
+									<div class="character__actions actions">
+										<div class="actions__single actions__single--visibility">
+											<div class="actions__single-icon">
+												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
+											</div>
+											<div class="actions__single-tip small-tip">скрыть от всех</div>
+										</div>
+									</div>
+								</div>
+								<div class="character__stats stats">
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text">Gran Kain</div>
+										<div class="stats__block-title">сервер</div>
+									</div>
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
+										<div class="stats__block-title">клан</div>
+									</div>
+								</div>
+							</div>
+							<div class="character visibility-trigger">
+								<div class="character__header">
+									<div class="character__lvl">5</div>
+									<div class="character__name">S4dboy</div>
+									<span class="character__class">Верховный Шаман</span>
+									<div class="character__actions actions">
+										<div class="actions__single actions__single--visibility">
+											<div class="actions__single-icon">
+												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
+											</div>
+											<div class="actions__single-tip small-tip">скрыть от всех</div>
+										</div>
+									</div>
+								</div>
+								<div class="character__stats stats">
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text">Gran Kain</div>
+										<div class="stats__block-title">сервер</div>
+									</div>
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
+										<div class="stats__block-title">клан</div>
+									</div>
+								</div>
+							</div>
+							<div class="character visibility-trigger">
+								<div class="character__header">
+									<div class="character__lvl">5</div>
+									<div class="character__name">S4dboy</div>
+									<span class="character__class">Верховный Шаман</span>
+									<div class="character__actions actions">
+										<div class="actions__single actions__single--visibility">
+											<div class="actions__single-icon">
+												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
+											</div>
+											<div class="actions__single-tip small-tip">скрыть от всех</div>
+										</div>
+									</div>
+								</div>
+								<div class="character__stats stats">
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text">Gran Kain</div>
+										<div class="stats__block-title">сервер</div>
+									</div>
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
+										<div class="stats__block-title">клан</div>
+									</div>
+								</div>
+							</div>
+							<div class="character visibility-trigger">
+								<div class="character__header">
+									<div class="character__lvl">5</div>
+									<div class="character__name">S4dboy</div>
+									<span class="character__class">Верховный Шаман</span>
+									<div class="character__actions actions">
+										<div class="actions__single actions__single--visibility">
+											<div class="actions__single-icon">
+												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
+											</div>
+											<div class="actions__single-tip small-tip">скрыть от всех</div>
+										</div>
+									</div>
+								</div>
+								<div class="character__stats stats">
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text">Gran Kain</div>
+										<div class="stats__block-title">сервер</div>
+									</div>
+									<div class="stats__block stats__block--half stats__block--height-1">
+										<div class="stats__block-text"><img class="stats__block-text-inline-pic" src="img/l2clan.png" alt="">AllMighty</div>
+										<div class="stats__block-title">клан</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
 			</div>
@@ -597,6 +786,7 @@
 
 	<script src="scripts/script.js" charset="utf-8"></script>
 	<script src="scripts/game.js" charset="utf-8"></script>
+	<script src="scripts/eye.js" charset="utf-8"></script>
 
 </body>
 </html>

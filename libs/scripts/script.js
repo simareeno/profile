@@ -262,22 +262,33 @@ $(document).ready(function () {
 			window.open('achievements.html');
 		})
 
+		var parentTrigger, wasHidden;
+		wasHidden = false;
+
 		function hideHiddenBlocks() {
-			$('.visibility-trigger').addClass('visibility-trigger--hovered');
+			$('.visibility-trigger.visibility-trigger--active').addClass('visibility-trigger--hovered');
 		}
 
 		function showHiddenBlocks() {
 			$('.visibility-trigger').removeClass('visibility-trigger--hovered');
+			wasHidden = false;
 		}
 
-		$('.actions-single--visibility').hover(hideHiddenBlocks, showHiddenBlocks);
+		// $('.main__characters-list--overflow').bind('mousewheel DOMMouseScroll', function (e) { return false; });
 
-		var parentTrigger;
-
-		$('.actions-single--visibility .actions-single-icon').click(function () {
+		$('.actions__single--visibility .actions__single-icon').click(function () {
 			event.stopPropagation();
-			parent = $(this).parent('.actions-single').toggleClass('actions-single--active');
+			parent = $(this).parent('.actions__single').toggleClass('actions__single--active');
 			parentTrigger = $(this).closest('.visibility-trigger').toggleClass('visibility-trigger--active');
+
+			if (wasHidden === false) {
+				hideHiddenBlocks();
+				wasHidden = true;
+			} else {
+				showHiddenBlocks();
+			}
+
+			$('.actions__single--visibility.actions__single--active').hover(hideHiddenBlocks, showHiddenBlocks);
 		})
 	});
 });

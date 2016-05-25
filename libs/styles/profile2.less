@@ -548,7 +548,7 @@
 		width: 17px;
 		height: 18px;
 		display: inline-block;
-		opacity: 0;
+		opacity: .2;
 		background-repeat: no-repeat;
 		-webkit-user-select: none;
 		padding-right: 30px;
@@ -894,7 +894,7 @@
 }
 
 .additional__header, .additional__content {
-	transition: opacity .2s .2s ease-in-out;
+	transition: opacity .2s ease-in-out;
 }
 
 .visibility-trigger {
@@ -902,13 +902,13 @@
 	transition: opacity .2s ease-in-out;
 
 	&.additional {
-		transition: background .2s .2s ease-in-out;
+		transition: background .2s ease-in-out;
 	}
 
 	&--hovered {
 
 		.additional__content {
-			opacity: .5;
+			opacity: .2;
 		}
 
 		.additional__header {
@@ -916,7 +916,7 @@
 		}
 
 		&.additional {
-			background: rgba(157, 205, 255, 0.025);
+			// background: rgba(157, 205, 255, 0.025);
 		}
 	}
 
@@ -991,7 +991,7 @@
 	display: inline-block;
 	float: right;
 	margin-right: -3px;
-	opacity: 0;
+	opacity: 1;
 	transition: opacity .2s ease-in-out;
 
 	&:hover {
@@ -1039,17 +1039,20 @@
 		&--visibility {
 			width: 18px;
 			height: 14px;
+			position: relative;
+			top: -2px;
+			right: 5px;
 
 			svg {
-				height: 14px;
-				width: 18px;
+				height: 25px;
+				width: 30px;
 			}
 		}
 
 		&--visibility & {
 
 			&-tip {
-				left: -55px;
+				left: -31px;
 			}
 		}
 
@@ -1080,6 +1083,27 @@
 
 			}
 		}
+	}
+}
+
+
+.eye {
+	position: relative;
+
+	&__eyelid {
+
+	}
+
+	&__bottom-eyelid {
+
+	}
+
+	&__eyepupil {
+
+	}
+
+	&__eyebrow {
+
 	}
 }
 
