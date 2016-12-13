@@ -10,8 +10,9 @@
 	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/rub.css">
 	<link rel="stylesheet" href="css/controls.css">
-	<link rel="stylesheet" href="css/profile2.css">
-	<link rel="stylesheet" href="css/game.css">
+	<link rel="stylesheet" href="css/reverse/profile2.css">
+	<link rel="stylesheet" href="css/reverse/game.css">
+	<link rel="stylesheet" href="css/change-nickname.css">
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 	<script src="scripts/jquery.min.js" charset="utf-8"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
@@ -63,42 +64,42 @@
 						<li class="dropdown__list-item dropdown__list-title"><span class="dropdown__list-title-number">3</span> игрока</li>
 						<li class="dropdown__list-item dropdown__list-users">
 							<div class="gamer">
-								<div class="gamer__avatar"><span class="avatar"><img src="img/4game-avatar.png" alt=""></span></div>
+								<div class="gamer__avatar"><span class="avatar"><img src="img/avatar-new.png" alt=""></span></div>
 								<div class="gamer__right">
 									<div class="gamer__nickname"><span class="highlighted">mika</span></div>
 									<div class="gamer__desc">3 общих друга</div>
 								</div>
 							</div>
 							<div class="gamer">
-								<div class="gamer__avatar"><span class="avatar"><img src="img/4game-avatar.png" alt=""></span></div>
+								<div class="gamer__avatar"><span class="avatar"><img src="img/avatar-new.png" alt=""></span></div>
 								<div class="gamer__right">
 									<div class="gamer__nickname"><span class="highlighted">mikamika</span></div>
 									<div class="gamer__desc">онлайн на сайте</div>
 								</div>
 							</div>
 							<div class="gamer">
-								<div class="gamer__avatar"><span class="avatar"><img src="img/4game-avatar.png" alt=""></span></div>
+								<div class="gamer__avatar"><span class="avatar"><img src="img/avatar-new.png" alt=""></span></div>
 								<div class="gamer__right">
 									<div class="gamer__nickname"><span class="highlighted">mika</span>4game</div>
 									<div class="gamer__desc">был онлайн 52 дня назад</div>
 								</div>
 							</div>
 							<div class="gamer">
-								<div class="gamer__avatar"><span class="avatar"><img src="img/4game-avatar.png" alt=""></span></div>
+								<div class="gamer__avatar"><span class="avatar"><img src="img/avatar-new.png" alt=""></span></div>
 								<div class="gamer__right">
 									<div class="gamer__nickname">4game</div>
 									<div class="gamer__desc">25 часов в Aion</div>
 								</div>
 							</div>
 							<div class="gamer">
-								<div class="gamer__avatar"><span class="avatar"><img src="img/4game-avatar.png" alt=""></span></div>
+								<div class="gamer__avatar"><span class="avatar"><img src="img/avatar-new.png" alt=""></span></div>
 								<div class="gamer__right">
 									<div class="gamer__nickname">mikaamikma</div>
 									<div class="gamer__desc"><span class="highlighted">mika</span>4game в Point Blank</div>
 								</div>
 							</div>
 							<div class="gamer">
-								<div class="gamer__avatar"><span class="avatar"><img src="img/4game-avatar.png" alt=""></span></div>
+								<div class="gamer__avatar"><span class="avatar"><img src="img/avatar-new.png" alt=""></span></div>
 								<div class="gamer__right">
 									<div class="gamer__nickname">sdsmikamss</div>
 									<div class="gamer__desc">2 часа в Point Blank</div>
@@ -109,7 +110,7 @@
 				</div>
 				<div class="bar__personal-user bar__personal-item dropdown">
 					<div class="bar__personal-user-nick-ava dropdown__top-part">
-						<span class="bar__personal-user-avatar avatar"><img src="img/4game-avatar.png" alt=""></span>
+						<span class="bar__personal-user-avatar avatar"><img src="img/avatar-new.png" alt=""></span>
 						<span class="bar__personal-user-nickname nickname">Радикальный енот</span>
 						<i class="dropdown__arrow"></i>
 					</div>
@@ -146,7 +147,6 @@
 					<span class="editable-nickname">
 							<span class="editable-nickname__change" id="input1">Радикальный енот</span>
 							<span class="editable-nickname__absolute">
-								<span class="editable-nickname__save editable-nickname__save--yeap button button--m button--yellow">Сохранить</span>
 								<span class="editable-nickname__icon editable-nickname__icon--edit editable-nickname__icon--first-time">
 									<span class="editable-nickname__icon-tip small-tip">изменить ник</span>
 								</span>
@@ -170,6 +170,8 @@
 						<span class="editable-nickname__tooltip-text">Ник&nbsp;изменен</span>
 					</span>
 				</div>
+				<span class="title__warning">Ник можно менять раз в два месяца</span>
+				<span class="editable-nickname__save editable-nickname__save--yeap button button--x button--yellow">Сохранить ник</span>
 				<div class="title-menu status status--online">
 					<!-- <img class="status__icon" src="img/l2-icon.png" alt=""> -->
 					<span class="status__state">онлайн на сайте</span>
@@ -201,10 +203,18 @@
 				<div class="user__avatar-dropdown user__avatar-dropdown--hide">
 					<span class="user__avatar-dropdown-arrow"></span>
 					<ul>
-						<li class="user__avatar-dropdown--active user__avatar-dropdown--standart user-avatar-dropdown-item">
-	            <span class="user__avatar-dropdown-avatar"><img src="img/4game-avatar.png" alt=""></span>
-	            <span class="user__avatar-dropdown-desc">Стандартный</span>
-	          </li>
+			<li class="user__avatar-dropdown--active user__avatar-dropdown--standart user-avatar-dropdown-item">
+				<div class="user__avatar-controls controls">
+					<div class="controls__arrow controls__arrow--left">
+						<i class="dropdown__arrow"></i>
+					</div>
+					<div class="controls__arrow controls__arrow--right">
+						<i class="dropdown__arrow"></i>
+					</div>
+				</div>
+				<span class="user__avatar-dropdown-avatar"><img src="img/avatar-new.png" alt=""></span>
+				<span class="user__avatar-dropdown-desc">Стандартный</span>
+			</li>
 						<li class="user-avatar-dropdown-item user__avatar-dropdown--vk">
 	            <span class="user__avatar-dropdown-avatar"><img src="img/avatar111.jpeg" alt=""></span>
 	            <span class="user__avatar-dropdown-desc">Из Вконтакте</span>
@@ -221,7 +231,7 @@
 				<div class="button__label">Вконтакте</div>
 			</div> -->
 
-			<div class="additional block block--pure visibility-trigger">
+			<div class="additional block block--pure visibility-trigger visibility-trigger--nothovered">
 				<div class="additional__header">В соцсетях</div>
 				<div class="additional__actions actions">
 					<div class="actions__single actions__single--settings">
@@ -292,7 +302,7 @@
 		<div class="content__center">
 			<!-- <img src="img/dto.png" alt=""> -->
 
-			<div class="game block game--l2 visibility-trigger">
+			<div class="game block game--l2 visibility-trigger visibility-trigger--nothovered">
 
 				<div class="game__main main">
 
@@ -304,7 +314,7 @@
 							<div class="main__header-title-game">
 								<div class="main__header-title-game-label">Lineage 2</div>
 								<div class="main__header-actions actions">
-									<div class="actions__single actions__single--visibility actions__single--fake">
+									<div class="actions__single actions__single--visibility  actions__single--fake">
 										<div class="actions__single-icon">
 										</div>
 										<div class="actions__single-tip small-tip">скрыть от всех</div>
@@ -351,13 +361,13 @@
 							<span class="main__about-item-title-text">персонажей</span>
 						</div>
 						<div class="main__characters-list main__characters-list--overflow">
-							<div class="character character--active visibility-trigger">
+							<div class="character character--active visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">85</div>
 									<div class="character__name">Tokimonsta</div>
 									<span class="character__class">Охотник за сокровищами</span>
 									<div class="character__actions actions">
-										<div class="actions__single actions__single--visibility actions__single--fake">
+										<div class="actions__single actions__single--visibility">
 											<div class="actions__single-icon">
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
@@ -375,7 +385,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="character visibility-trigger">
+							<div class="character visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">15</div>
 									<div class="character__name">Elia</div>
@@ -383,7 +393,7 @@
 									<div class="character__actions actions">
 										<div class="actions__single actions__single--visibility">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
+
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -400,7 +410,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="character visibility-trigger">
+							<div class="character visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">5</div>
 									<div class="character__name">S4dboy</div>
@@ -408,7 +418,6 @@
 									<div class="character__actions actions">
 										<div class="actions__single actions__single--visibility">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -425,7 +434,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="character visibility-trigger">
+							<div class="character visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">5</div>
 									<div class="character__name">S4dboy</div>
@@ -433,7 +442,6 @@
 									<div class="character__actions actions">
 										<div class="actions__single actions__single--visibility">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -450,7 +458,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="character visibility-trigger">
+							<div class="character visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">5</div>
 									<div class="character__name">S4dboy</div>
@@ -458,7 +466,6 @@
 									<div class="character__actions actions">
 										<div class="actions__single actions__single--visibility">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -475,7 +482,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="character visibility-trigger">
+							<div class="character visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">5</div>
 									<div class="character__name">S4dboy</div>
@@ -483,7 +490,6 @@
 									<div class="character__actions actions">
 										<div class="actions__single actions__single--visibility">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -500,7 +506,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="character visibility-trigger">
+							<div class="character visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">5</div>
 									<div class="character__name">S4dboy</div>
@@ -508,7 +514,6 @@
 									<div class="character__actions actions">
 										<div class="actions__single actions__single--visibility">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -525,7 +530,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="character visibility-trigger">
+							<div class="character visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">5</div>
 									<div class="character__name">S4dboy</div>
@@ -533,7 +538,6 @@
 									<div class="character__actions actions">
 										<div class="actions__single actions__single--visibility">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -557,7 +561,7 @@
 			</div>
 
 
-			<div class="game block game--pb visibility-trigger">
+			<div class="game block game--pb visibility-trigger visibility-trigger--nothovered">
 
 				<div class="game__main main">
 
@@ -569,9 +573,8 @@
 							<div class="main__header-title-game">
 								<div class="main__header-title-game-label">Devil's Third Online</div>
 								<div class="main__header-actions actions">
-									<div class="actions__single actions__single--visibility">
+									<div class="actions__single actions__single--visibility actions__single--fake">
 										<div class="actions__single-icon">
-											<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"></path></svg>
 										</div>
 										<div class="actions__single-tip small-tip">скрыть от всех</div>
 									</div>
@@ -623,9 +626,8 @@
 									<div class="character__name">Tokimonsta</div>
 									<span class="character__class">Охотник за сокровищами</span>
 									<div class="character__actions actions">
-										<div class="actions__single actions__single--visibility">
+										<div class="actions__single actions__single--visibility  actions__single--fake">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -642,15 +644,14 @@
 									</div>
 								</div>
 							</div>
-							<div class="character visibility-trigger">
+							<div class="character visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">15</div>
 									<div class="character__name">Elia</div>
 									<span class="character__class">Властитель огня</span>
 									<div class="character__actions actions">
-										<div class="actions__single actions__single--visibility">
+										<div class="actions__single actions__single--visibility  actions__single--fake">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -667,15 +668,14 @@
 									</div>
 								</div>
 							</div>
-							<div class="character visibility-trigger">
+							<div class="character visibility-trigger visibility-trigger--fake">
 								<div class="character__header">
 									<div class="character__lvl">5</div>
 									<div class="character__name">S4dboy</div>
 									<span class="character__class">Верховный Шаман</span>
 									<div class="character__actions actions">
-										<div class="actions__single actions__single--visibility">
+										<div class="actions__single actions__single--visibility  actions__single--fake">
 											<div class="actions__single-icon">
-												<svg viewBox="0 0 17.29 9.7"><path d="M17.18,5.23C17.06,5,14.33,0,8.61,0,3.68,0,1,3.75.23,4.89a1.5,1.5,0,0,0,0,1.61A11.36,11.36,0,0,0,3,9.5,1,1,0,1,0,4.2,7.9,9.5,9.5,0,0,1,2.1,5.7,8.28,8.28,0,0,1,7.65,2.07a3,3,0,1,0,4.71,1,9.06,9.06,0,0,1,3.05,3.11A1,1,0,0,0,17.18,5.23Z"/></svg>
 											</div>
 											<div class="actions__single-tip small-tip">скрыть от всех</div>
 										</div>
@@ -760,82 +760,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- <div class="additional block block--pure url">
-				<div class="url__tip tip">
-					<span class="tip__text">Покажи свой профиль друзьям</span>
-					<span class="tip__arrow">
-					</span>
-				</div>
-				<div class="additional__header">Адрес в Фогейме</div>
-				<div class="additional__actions">
-					<div class="additional__actions-single additional__actions-single--settings">
-						<div class="additional__actions-single-icon">
-							<svg viewBox="0 0 12.38 12.83"><path d="M11.16,7.48c-1,1-3.37.95-4.91,1.08A3.15,3.15,0,0,1,6,8.84L3.32,11.53C1.87,13,1.63,13.23.61,12.21s-0.71-1.43.63-2.77L3.61,7.07a0.49,0.49,0,0,0,.14-0.42c-0.23-1.72-.25-3.91.85-5C5.41,0.84,7.42-.29,8.24.07a1.57,1.57,0,0,1,1,1L6.61,2.82a0.5,0.5,0,0,0-.17.64L7.17,4.92a0.5,0.5,0,0,0,.22.22L8.84,5.87A0.5,0.5,0,0,0,9.49,5.7l1.75-2.63s0.39,0.37,1,1C12.64,4.48,12.2,6.44,11.16,7.48Z"/></svg>
-						</div>
-						<div class="additional__actions-single-tip small-tip">изменить в&nbsp;настройках</div>
-					</div>
-				</div>
-				<div class="additional__content">
-					<div class="additional__content__link">4game.com/PointBlankSimareeno</div>
-					<div class="additional__content__link-share">
-						<div class="social social--share">
-							<div class="social__icon social__icon--vk">
-								<svg x="0px" y="0px" viewBox="0 0 18 10">
-								  <path d="M18 9.2c0 0 0-0.1 0-0.1 0-0.1-0.1-0.1-0.1-0.2 0 0 0-0.1-0.1-0.1 0-0.1-0.1-0.1-0.2-0.2 0 0 0 0 0-0.1 -0.1-0.1-0.1-0.2-0.2-0.2 -0.5-0.7-1-1.1-1.6-1.7 -0.3-0.3-0.7-0.6-0.7-0.9 0-0.1 0-0.2 0-0.2 0 0 0-0.1 0-0.1 0-0.1 0.1-0.2 0.1-0.2 0 0 0-0.1 0.1-0.1 0.1-0.1 0.1-0.2 0.2-0.2 0 0 0 0 0.1-0.1 0.1-0.1 0.2-0.2 0.2-0.3 0.1-0.2 0.3-0.4 0.4-0.5 0.1-0.1 0.2-0.3 0.4-0.4 0-0.1 0.1-0.1 0.1-0.2C16.8 3.1 16.9 3 17 2.9c0-0.1 0.1-0.1 0.1-0.2 0.1-0.2 0.3-0.4 0.4-0.6C17.6 1.9 18.1 1 18 0.7c0-0.1-0.1-0.1-0.1-0.1 0 0 0 0-0.1 0 0 0-0.1 0-0.1-0.1 0 0-0.1 0-0.1 0 -0.1 0-0.1 0-0.2 0 0 0-0.1 0-0.1 0 -0.1 0-0.1 0-0.2 0 0 0 0 0 0 0 0 0 0 0-0.1 0 -0.2 0-0.3 0-0.5 0 -0.2 0-0.3 0-0.5 0 -0.2 0-0.5 0-0.7 0 -0.2 0-0.3 0-0.5 0 0 0-0.1 0-0.1 0 -0.1 0-0.1 0-0.2 0 -0.1 0-0.1 0-0.2 0 -0.1 0-0.3 0-0.4 0.1 -0.3 0.1-0.5 0.8-0.7 1.2 -0.1 0.3-0.2 0.5-0.4 0.7 0 0.1-0.1 0.1-0.1 0.2 -0.1 0.1-0.2 0.3-0.3 0.4 0 0.1-0.1 0.1-0.1 0.2 -0.1 0.2-0.3 0.5-0.5 0.7 0 0 0 0 0 0.1 0 0 0 0 0 0 0 0 0 0 0 0 -0.3 0.3-0.5 0.8-1 0.8 -0.1 0-0.1-0.1-0.2-0.2l0 0c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0-0.1-0.1-0.1-0.1 0-0.1-0.1-0.1-0.1-0.2 0 0 0 0 0-0.1 0-0.1 0-0.2-0.1-0.3 0 0 0-0.1 0-0.1 0-0.1 0-0.2 0-0.3 0 0 0-0.1 0-0.1 0-0.1 0-0.2 0-0.4 0 0 0 0 0-0.1 0-0.1 0-0.2 0-0.3 0-0.7 0.3-1.7-0.1-2.3 -0.1-0.1-0.1-0.2-0.2-0.2 0 0 0 0-0.1 0C10 0.1 9.9 0.1 9.7 0.1c0 0 0 0 0 0C9.6 0 9.5 0 9.3 0c0 0-0.1 0-0.1 0C8.8 0 8.4 0 8 0 7 0 6.2 0.1 5.9 0.7c0.4 0.2 0.7 0.2 0.9 0.6 0.1 0.1 0.1 0.2 0.1 0.4 0 0.1 0 0.1 0 0.2C7 1.9 7 2 7 2.1c0 0.1 0 0.2 0 0.2 0 0.1 0 0.2 0 0.3 0 0.1 0 0.2 0 0.3C7 3 7 3.1 7 3.2 7 3.8 7 4.8 6.6 4.9c0 0-0.1 0-0.1 0 -0.1 0-0.2 0-0.2-0.1 0 0 0 0 0 0C6.1 4.7 6.1 4.6 6 4.6c0 0 0 0 0 0C5.8 4.4 5.7 4.2 5.6 4c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c0 0 0 0 0 0 0 0-0.1-0.1-0.1-0.1C5.4 3.7 5.2 3.5 5.1 3.4c0-0.1-0.1-0.1-0.1-0.2C4.9 3 4.8 2.9 4.7 2.7c0-0.1-0.1-0.1-0.1-0.2C4.4 2.2 4.3 2 4.2 1.7 4 1.3 3.7 0.7 3.5 0.5c-0.1 0-0.2-0.1-0.4-0.1 -0.1 0-0.1 0-0.2 0 -0.1 0-0.1 0-0.2 0 0 0 0 0 0 0 -0.1 0-0.3 0-0.5 0 -0.2 0-0.4 0-0.5 0 -0.2 0-0.4 0-0.5 0 -0.1 0-0.2 0-0.2 0 0 0 0 0 0 0 -0.1 0-0.2 0-0.3 0 -0.1 0-0.1 0-0.2 0C0.2 0.5 0.1 0.6 0 0.7c0 0.7 0.4 1.3 0.6 1.8 0.2 0.4 0.4 0.8 0.6 1.2 0 0 0 0 0 0C1.5 4.1 1.7 4.5 2 4.8 2 4.9 2.1 5.1 2.2 5.2 2.4 5.4 2.5 5.7 2.7 6 2.8 6.1 2.9 6.2 3 6.3 3.2 6.6 3.3 6.8 3.5 7c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.1 1.3 2.3 2.6 4.8 2.9 0.1 0 0.3 0 0.4 0 0 0 0.1 0 0.1 0 0.1 0 0.3 0 0.4 0 0 0 0 0 0 0h0c0 0 0.1 0 0.1 0 0.1 0 0.2 0 0.2 0 0 0 0.1 0 0.1 0 0.1 0 0.1 0 0.2 0 0 0 0.1 0 0.1 0 0.1 0 0.1 0 0.2-0.1 0 0 0.1 0 0.1 0 0.1 0 0.1-0.1 0.1-0.1 0 0 0 0 0 0 0 0 0 0 0 0s0 0 0 0c0 0 0 0 0 0 0 0 0 0 0 0 0.3-0.6-0.1-1.8 0.7-2 0.1 0 0.1 0 0.2 0 0 0 0.1 0 0.1 0 0 0 0.1 0 0.1 0 0 0 0.1 0 0.1 0 0 0 0.1 0 0.1 0.1 0 0 0 0 0.1 0.1 0 0 0.1 0.1 0.1 0.1 0 0 0 0 0.1 0.1 0 0 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.2 0.2 0 0 0 0 0 0 0 0.1 0.1 0.1 0.1 0.2 0 0 0 0 0 0 0 0 0.1 0.1 0.1 0.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0.6 1.2 1.2 2.1 1.3h0.1c0.1 0 0.2 0 0.3 0 0 0 0.1 0 0.1 0 0.1 0 0.1 0 0.2 0 0 0 0.1 0 0.1 0 0.2 0 0.4 0 0.6 0 0.2 0 0.4 0 0.6 0 0 0 0 0 0.1 0 0 0 0 0 0 0 0.2 0 0.3 0 0.4 0 0 0 0.1 0 0.1 0 0.1 0 0.2 0 0.4-0.1 0 0 0 0 0 0 0.1 0 0.2-0.1 0.3-0.2 0 0 0 0 0.1-0.1C17.9 9.6 18 9.5 18 9.4c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0C18 9.3 18 9.2 18 9.2z"/>
-								</svg>
-							</div>
-							<div class="social__icon social__icon--fb">
-								<svg x="0px" y="0px" viewBox="0 0 9 16">
-									<path d="M2,16V8.3H0V5.1h2c0,0,0-0.7,0-1.9C2,1.4,3.7,0,6.9,0c1.3,0,1.9,0.1,1.9,0.1L8.3,2.8c0,0-0.3,0-1.3,0c-1.1,0-1.5,0.3-1.5,1
-									c0,0.6,0-1.9,0,1.3H9L8.3,8.3l-2.8,0V16H2z"/>
-								</svg>
-							</div>
-							<div class="social__icon social__icon--ok">
-								<svg x="0px" y="0px" viewBox="0 0 10 17">
-									<path d="M5,8.8c2.5,0,4.5-2,4.5-4.4C9.5,2,7.5,0,5,0C2.5,0,0.5,2,0.5,4.4C0.5,6.8,2.5,8.8,5,8.8z M5,2.6c1,0,1.8,0.8,1.8,1.8
-										c0,1-0.8,1.8-1.8,1.8c-1,0-1.8-0.8-1.8-1.8C3.2,3.4,4,2.6,5,2.6z M9.8,9.5C9.4,8.9,8.6,8.7,8,9.1c-1.8,1.1-4.2,1.1-6,0
-										C1.4,8.7,0.6,8.9,0.2,9.5c-0.4,0.6-0.2,1.4,0.4,1.8c0.8,0.5,1.7,0.9,2.6,1.1l-2.5,2.5c-0.5,0.5-0.5,1.3,0,1.8
-										C1,16.9,1.3,17,1.6,17c0.3,0,0.7-0.1,0.9-0.4L5,14.2l2.5,2.4c0.5,0.5,1.3,0.5,1.8,0c0.5-0.5,0.5-1.3,0-1.8l-2.5-2.5
-										c0.9-0.2,1.8-0.6,2.6-1.1C10,10.9,10.2,10.1,9.8,9.5z"/>
-								</svg>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-
-			<!-- <h2>Друзья</h2>
-			<div class="friends">
-				<div class="friend">
-					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
-					<div class="friend__content">
-						<div class="friend__nickname nickname">Never Say No</div>
-						<div class="status status--in-game">
-							<img class="status__icon" src="img/l2-icon.png" alt="">
-							<span class="status__state">онлайн в Lineage 2</span>
-						</div>
-					</div>
-				</div>
-				<div class="friend">
-					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
-					<div class="friend__content">
-						<div class="friend__nickname nickname">electrOduck^_-</div>
-						<div class="status status--online">
-							<span class="status__state">онлайн</span>
-						</div>
-					</div>
-				</div>
-				<div class="friend">
-					<div class="friend__avatar avatar"><img class="avatar__icon" src="img/tears.jpg" alt="" /></div>
-					<div class="friend__content">
-						<div class="friend__nickname nickname">SANKE</div>
-						<div class="status status--away">
-							<span class="status__state">был 20 дней назад</span>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 
 	</div>
@@ -845,7 +769,9 @@
 		<div class="footer__lang footer__item"><a>Россия и СНГ: Русский</a></div>
 	</div>
 
-	<script src="scripts/script.js" charset="utf-8"></script>
+
+
+	<script src="scripts/script-reverse.js" charset="utf-8"></script>
 	<script src="scripts/game.js" charset="utf-8"></script>
 	<script src="scripts/eye.js" charset="utf-8"></script>
 

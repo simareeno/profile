@@ -510,3 +510,44 @@
 	line-height: 26px;
 	font-weight: bold;
 }
+
+.input {
+	-webkit-appearance: none;
+	border: 0;
+	transition: box-shadow .2s ease-in;
+	border-radius: 5px;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.input--white {
+	box-shadow:  0 0 0 2px rgba(0, 0, 0, .1);
+
+	&:focus {
+		box-shadow:  0 0 0 2px rgba(0, 0, 0, .2);
+	}
+}
+
+.input--full-width {
+	width: 100%;
+}
+
+.input--x {
+	font-size: 16px;
+	line-height: 40px;
+	font-weight: bold;
+}
+
+.input--m {
+	font-size: 14px;
+	line-height: 32px;
+	font-weight: bold;
+	padding: 0 8px;
+}
+
+.input--s {
+	font-size: 11px;
+	line-height: 26px;
+}

@@ -42,7 +42,7 @@ s.click(function() {
 	    x1: 15,
 	    x2: 15,
 	    y1: 14,
-	    y2: 16.5
+	    y2: 16.7
 	  }, ANIMATION_TIME, mina.easeIn);
 
 	   eb4.animate({

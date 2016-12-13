@@ -8,6 +8,7 @@
 html {
 	// background-color: #1C1C1F;
 	background-color: #151517;
+	overflow: hidden;
 }
 
 body {
@@ -148,6 +149,10 @@ a {
 	&--active {
 		color: rgba(70, 66, 60, .7);
 		z-index: 50;
+
+		svg {
+			fill: rgba(70, 66, 60, .7);
+		}
 	}
 
 	&--active & {
@@ -211,6 +216,19 @@ a {
 			&--hl {
 				font-weight: bold;
 				font-size: 16px;
+			}
+		}
+
+		&-title {
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: bold;
+			line-height: 12px;
+			margin:20px 15px 10px !important;
+
+			&-number {
+				font-size: 14px;
+				color: black;
 			}
 		}
 	}
@@ -572,5 +590,75 @@ a {
 		opacity: 1;
 		transform: translate(0, 0px);
 		transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+	}
+}
+
+.gamer {
+	display: flex;
+	align-items: center;
+
+	&:hover {
+		background: rgba(0, 0, 0, .1);
+		cursor: pointer;
+	}
+
+	&__avatar {
+		width: 32px;
+		height: 32px;
+
+		.avatar {
+
+			img {
+				width: 32px;
+				height: 32px;
+				border-radius: 100%;
+			}
+		}
+	}
+
+	&__right {
+		margin-left: 10px;
+	}
+
+	&__nickname {
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 16px;
+		color: black;
+	}
+
+	&__desc {
+		font-family: Arial;
+		font-size: 12px;
+		line-height: 18px;
+	}
+}
+
+.dropdown__list-users {
+	height: 200px;
+	overflow-y: scroll;
+	margin-right: 5px;
+
+	&::-webkit-scrollbar {
+		height: 10px;
+		width: 10px;
+		background: rgba(0, 0, 0, 0);
+		border-radius: 10px;
+		margin-left: 10px;
+		transform: translate(10px,0);
+	}
+		&::-webkit-scrollbar-thumb {
+		background: rgba(0, 0, 0, .2);
+		transition: background .2s ease-in-out;
+		border-radius: 10px;
+		transform: translate(10px,0);
+
+		&:hover {
+			background: rgba(0, 0, 0, .3);
+			transition: background .2s ease-in-out;
+		}
+	}
+		&::-webkit-scrollbar-corner {
+		background: transparent;
 	}
 }

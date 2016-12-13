@@ -68,6 +68,9 @@ $(document).ready(function () {
 			}
 			document.getSelection().removeAllRanges();
 			$('#input1').attr('contenteditable', false);
+			$('.title-menu').removeClass('title-menu--hide');
+			$('.content').removeClass('content--margined');
+			$('.title__warning').removeClass('title__warning--active');
 			$('.editable-nickname__change').removeClass('editable-nickname__change--editable');
 			$('.editable-nickname__icon').removeClass('editable-nickname__icon--close');
 			$('.editable-nickname__icon').addClass('editable-nickname__icon--edit');
@@ -99,6 +102,9 @@ $(document).ready(function () {
 		function cancelNickname() {
 			$('#input1').attr('contenteditable', false);
 			document.getSelection().removeAllRanges();
+			$('.title-menu').removeClass('title-menu--hide');
+			$('.content').removeClass('content--margined');
+			$('.title__warning').removeClass('title__warning--active');
 			$('.editable-nickname__save').removeClass('editable-nickname__save--active');
 			$('.editable-nickname__change').removeClass('editable-nickname__change--editable');
 			$('.editable-nickname__save').removeClass('editable-nickname__save--active');
@@ -110,6 +116,9 @@ $(document).ready(function () {
 		function startEdit() {
 			$('#input1').attr('contenteditable', true);
 			$('#input1').selectText();
+			$('.title-menu').addClass('title-menu--hide');
+			$('.content').addClass('content--margined');
+			$('.title__warning').addClass('title__warning--active');
 			$('.editable-nickname__save').addClass('editable-nickname__save--active');
 			$('.editable-nickname__change').addClass('editable-nickname__change--editable');
 			$('.editable-nickname__tip').removeClass('tip--active');
@@ -140,6 +149,10 @@ $(document).ready(function () {
 					 e.preventDefault();
 			}
 		});
+
+		$('.controls__arrow').click(function (e) {
+			event.stopPropagation();
+		})
 
 		$(document).keyup(function(e) {
 			if (e.keyCode === 27) {
@@ -173,10 +186,10 @@ $(document).ready(function () {
 			event.stopPropagation();
 		})
 
-		$('#input1').dblclick(function () {
-			event.stopPropagation();
-			startEdit();
-		})
+		// $('#input1').dblclick(function () {
+		// 	event.stopPropagation();
+		// 	startEdit();
+		// })
 
 		$('.game').dblclick(function functionName() {
 			event.stopPropagation();
@@ -248,10 +261,10 @@ $(document).ready(function () {
 			hideUrlTip();
 		});
 
-		$(document).on('dblclick', function (e) {
-			event.stopPropagation();
-			cancelNickname();
-		})
+		// $(document).on('dblclick', function (e) {
+		// 	event.stopPropagation();
+		// 	cancelNickname();
+		// })
 
 		$('.user__avatar-dropdown-close').on('click', function(e) {
 		  event.stopPropagation();
@@ -269,14 +282,14 @@ $(document).ready(function () {
 		var parentTrigger, wasHidden;
 		wasHidden = false;
 
-		function hideHiddenBlocks() {
-			$('.visibility-trigger.visibility-trigger--active').addClass('visibility-trigger--hovered');
-		}
-
-		function showHiddenBlocks() {
-			$('.visibility-trigger').removeClass('visibility-trigger--hovered');
-			wasHidden = false;
-		}
+		// function hideHiddenBlocks() {
+		// 	$('.visibility-trigger.visibility-trigger--active').addClass('visibility-trigger--hovered');
+		// }
+		//
+		// function showHiddenBlocks() {
+		// 	$('.visibility-trigger').removeClass('visibility-trigger--hovered');
+		// 	wasHidden = false;
+		// }
 
 		// $('.main__characters-list--overflow').bind('mousewheel DOMMouseScroll', function (e) { return false; });
 
@@ -285,12 +298,16 @@ $(document).ready(function () {
 			parent = $(this).parent('.actions__single').toggleClass('actions__single--active');
 			parentTrigger = $(this).closest('.visibility-trigger').toggleClass('visibility-trigger--active');
 
-			if (wasHidden === false) {
-				hideHiddenBlocks();
-				wasHidden = true;
-			} else {
-				showHiddenBlocks();
-			}
+			parentTrigger.mouseleave(function () {
+				$(this).removeClass('visibility-trigger--nothovered');
+			})
+
+			// if (wasHidden === false) {
+			// 	hideHiddenBlocks();
+			// 	wasHidden = true;
+			// } else {
+			// 	showHiddenBlocks();
+			// }
 
 			$('.actions__single--visibility.actions__single--active').hover(hideHiddenBlocks, showHiddenBlocks);
 		})

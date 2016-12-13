@@ -46,7 +46,7 @@
 	&--dto {
 
 		.main {
-			background-image: url(../img/dto-bg.jpg);
+			background-image: url(../../img/dto-bg.jpg);
 
 		}
 	}
@@ -54,7 +54,7 @@
 	&--pb {
 
 		.main {
-			background-image: url(../img/pb-bg.png);
+			background-image: url(../../img/pb-bg.png);
 		}
 
 		.main, .game__widget {
@@ -65,7 +65,7 @@
 	&--l2 {
 
 		.main {
-			background-image: url(../img/l2-bg.png);
+			background-image: url(../../img/l2-bg.png);
 		}
 
 		.main, .game__widget {
@@ -73,10 +73,28 @@
 		}
 	}
 
-	&.visibility-trigger--hovered {
+	&.visibility-trigger--active {
 
 		.main__header-title-game-label, .main__header-title-sub, .main__header-icon, .main__about, .main__characters, .game__widget-title, .game__widget-content {
 			opacity: .2;
+		}
+
+		&:hover {
+			.main__header-title-game-label, .main__header-title-sub, .main__header-icon, .main__about, .main__characters, .game__widget-title, .game__widget-content {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.visibility-trigger--active.visibility-trigger--nothovered {
+		.main__header-title-game-label, .main__header-title-sub, .main__header-icon, .main__about, .main__characters, .game__widget-title, .game__widget-content {
+			opacity: .2!important;
+		}
+
+		&:hover {
+			.main__header-title-game-label, .main__header-title-sub, .main__header-icon, .main__about, .main__characters, .game__widget-title, .game__widget-content {
+				opacity: .2!important;
+			}
 		}
 	}
 }
@@ -404,7 +422,6 @@
 
 		transition: opacity .2s .2s ease-in-out;
 
-
 		.stats, .character__name, .character__class, .character__lvl {
 			opacity: .2;
 			// visibility: hidden;
@@ -500,7 +517,7 @@
 	&.visibility-trigger--fake {
 
 		.actions__single-icon {
-			background-image: url(../img/eye-open.png);
+			background-image: url(../../img/eye-open.png);
 			width: 18px;
 			height: 9px;
 			position: relative;
@@ -512,12 +529,20 @@
 	&.visibility-trigger--fake&.visibility-trigger--active {
 
 		.actions__single-icon {
-			background-image: url(../img/eye-close.png);
+			background-image: url(../../img/eye-close.png);
 			width: 23px;
 			height: 9px;
 			position: relative;
 			top: -6px;
 			left: 5px;
 		}
+	}
+}
+
+.game.visibility-trigger--active  {
+
+	.character__actions {
+		opacity: 0;
+		visibility: hidden;
 	}
 }

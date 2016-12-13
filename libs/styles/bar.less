@@ -106,32 +106,44 @@
 
 		&-achievements {
 			width: 13px;
-			height: 19px;
+			height: 18px;
 			fill: white;
-			padding-top: 6px;
+			padding-top: 5px;
 			margin-left: 15px;
 
 			svg {
 				width: 13px;
-				height: 19px;
+				height: 18px;
+			}
+		}
+
+		&-players {
+			fill: white;
+			margin-left: 15px;
+
+			svg {
+				position: relative;
+				top:3px;
+				width: 20px;
+				height: 16px;
 			}
 		}
 
 		&-user {
-			margin-left: 15px;
 
 			&-nick-ava {
 				display: flex;
 			}
 
 			&-avatar {
-				width: 28px;
-				height: 28px;
-				padding-top: 4px;
+				width: 26px;
+				height: 26px;
+				padding-top: 5px;
 
 				img {
 					width: inherit;
 					height: inherit;
+					border-radius: 100%;
 				}
 			}
 
@@ -140,4 +152,23 @@
 			}
 		}
 	}
+}
+
+.bar__personal-players .dropdown__list-users .gamer {
+	padding: 10px 15px;
+}
+
+.bar__personal-players .dropdown__list-search, .bar__personal-players .dropdown__list-title  {
+	margin: 0 15px;
+}
+
+.bar__personal-players .dropdown__list {
+	padding-top: 15px;
+	width: 310px;
+	left: 40px;
+	border-radius: 3px;
+}
+
+.highlighted {
+	background-color: rgba(250, 199, 4, .5);
 }
